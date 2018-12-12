@@ -6,7 +6,21 @@ import configureStore from './store/store';
 import { signup, login, logout } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
-    let store = configureStore();
+    let store;
+
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { currentUserId: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+
     const root = document.getElementById('root');
 
     window.signup = signup; // for testing session_api_util functions

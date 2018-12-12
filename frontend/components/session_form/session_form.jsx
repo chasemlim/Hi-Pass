@@ -6,12 +6,21 @@ class SessionForm extends React.Component {
         super(props);
         this.state = { username: "", email: "", password: "" };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.isolateUsername = this.isolateUsername.bind(this);
+        this.updateEmail = this.updateEmail.bind(this);
     }
 
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    updateEmail(e) {
+        e.preventDefault();
+        let email = e.target.value
+        let username = this.isolateUsername(email);
+        this.setState({ username: username, email: email })
     }
 
     isolateUsername(email) {
@@ -23,14 +32,12 @@ class SessionForm extends React.Component {
                 username += email[i];
             }
         }
+        return "";
     }
-    // CANT LOG IN ON LOCALHOST:3000
+
     handleSubmit(e) {
         e.preventDefault();
-        let username = this.isolateUsername(this.state.email) // Isolates the first part of their email to 
-        this.setState({ username: username });                // use as their username
-        const user = Object.assign({}, this.state);
-        this.props.action(user);
+        this.props.action(this.state).then(this.props.history.push("/"));
     }
 
     renderErrors() {
@@ -53,7 +60,7 @@ class SessionForm extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             Email:
-                            <input type="email" value={this.state.email} onChange={this.update("email")} />
+                            <input type="email" value={this.state.email} onChange={this.updateEmail} />
                         </label>
                         <br />
                         <label>
