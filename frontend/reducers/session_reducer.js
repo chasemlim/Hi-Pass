@@ -8,10 +8,11 @@ const sessionReducer = (state = { id: null }, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            newState = merge({}, state, { id: action.currentUser.id })
+            debugger;
+            newState = Object.assign({}, state, { id: action.currentUser.id })
             return newState;
         case LOGOUT_CURRENT_USER:
-            newState = merge({}, state);
+            newState = Object.assign({}, state);
             newState[id] = null;
             return newState;
         default:
