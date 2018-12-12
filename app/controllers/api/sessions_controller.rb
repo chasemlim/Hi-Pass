@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController 
+class Api::SessionsController < ApplicationController 
 
     def create
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
         if @user
             logout!
-            render json: @user # user is nil here, how should it redirect?
+            render json: {}
         else
             render json: ["No sign in"], status: 404
         end
