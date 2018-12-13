@@ -19,8 +19,8 @@ const App = () => (
             <WelcomeNavBarContainer />
         </header>
 
-        {/* <h1>Welcome to Hi-Pass!</h1>
-        <WelcomeContainer /> */}
+        <h1>Welcome to Hi-Pass!</h1>
+        <WelcomeContainer />
         <Switch>
             <Route path="/login" component={LoginFormContainer} />
             <Route path="/signup" component={SignupFormContainer} />
