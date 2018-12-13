@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const root = document.getElementById('root');
 
-    window.signup = signup; // for testing session_api_util functions
+    window.signup = signup; 
     window.login = login;
     window.logout = logout;
 
     window.getState = store.getState;
-    window.dispatch = store.dispatch; // for testing
+    window.dispatch = store.dispatch;
 
     ReactDOM.render(<Root store={store} />, root) 
 })
