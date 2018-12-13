@@ -1,0 +1,43 @@
+.hp-top-left {
+    position: absolute;
+    top: 13px;
+    left: 19px;
+    display: flex;
+    width: 184px;
+    height: 46px;
+    margin: 0;
+    color: #FEFFFE;
+    align-items: baseline;
+}
+
+.hp-top-right {
+    display: flex;
+    align-items: baseline;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.sc-logo {
+    background-image: url("SoundCloud.png");
+    background-repeat: no-repeat;
+    display: flex;
+    height: 22px;
+    width: 48px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.hp-signup {
+    display: flex;
+    font-size: 22px;
+    margin: 0 0 0 0;
+    position: absolute;
+    left: 53px;
+}
+
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}

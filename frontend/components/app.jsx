@@ -11,15 +11,16 @@ import {
 import WelcomeContainer from './welcome/welcome_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import WelcomeNavBarContainer from './welcome_navbar/welcome_navbar_container';
 
 const App = () => (
-    <div>
+    <div className="main-box">
         <header>
-
+            <WelcomeNavBarContainer />
         </header>
 
-        <h1>Welcome to Hi-Pass!</h1>
-        <WelcomeContainer />
+        {/* <h1>Welcome to Hi-Pass!</h1>
+        <WelcomeContainer /> */}
         <Switch>
             <Route path="/login" component={LoginFormContainer} />
             <Route path="/signup" component={SignupFormContainer} />

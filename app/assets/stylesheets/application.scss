@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+    height: 100%;
+}
+
+ body {
+    //  background-color: #F1F2F1;
+    background-color: black;
+     font: "Lucida Grande", sans-serif;
+ }
+
+ .main-box {
+     display: flex;
+     width: 80%;
+     height: 100%;
+ }
