@@ -1,0 +1,38 @@
+.welcome-page {
+    display: block;
+    width: 100%;
+}
+
+.search-bar {
+    margin: auto;
+    padding: 50px 0;
+}
+
+.welcome-search-bar {
+    font-family: 'interstateextralight';
+    margin: auto;
+    color: #666;
+    outline: 0;
+    border: 0;
+    background-color: #F1F2F1;
+    padding: 15px;
+    font-size: 16px;
+    width: 600px;
+    border-radius: 3px;
+}
+
+.welcome-search-bar:focus {
+    outline: 0;
+}
+
+.s-icon {
+    position: relative;
+    right: 37px;
+    top: 2px;
+    font-size: 21px;
+    color: #656665;
+}
+
+.s-icon:hover {
+    cursor: pointer;
+}
