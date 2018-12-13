@@ -15,12 +15,7 @@ import WelcomeNavBarContainer from './welcome_navbar/welcome_navbar_container';
 
 const App = () => (
     <div className="main-box">
-        <header>
-            <WelcomeNavBarContainer />
-        </header>
-
-        <h1>Welcome to Hi-Pass!</h1>
-        <WelcomeContainer />
+        <WelcomeNavBarContainer />
         <Switch>
             <Route path="/login" component={LoginFormContainer} />
             <Route path="/signup" component={SignupFormContainer} />
