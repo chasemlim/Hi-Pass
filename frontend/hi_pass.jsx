@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         delete window.currentUser;
     } else {
         store = configureStore();
-    }
+    };
 
     const root = document.getElementById('root');
 
@@ -30,5 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
-    ReactDOM.render(<Root store={store} />, root) 
-})
+    ReactDOM.render(<Root store={store} />, root);
+});

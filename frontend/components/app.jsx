@@ -26,6 +26,6 @@ const App = () => (
             <Route path="/signup" component={SignupFormContainer} />
         </Switch>
     </div>
-)
+);
 
 export default App;
