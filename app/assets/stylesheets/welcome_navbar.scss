@@ -19,7 +19,7 @@
 }
 
 .sc-logo {
-    background-image: url("SoundCloud.png");
+    background-image: image_url("SoundCloud.png");
     background-repeat: no-repeat;
     display: flex;
     height: 22px;
@@ -30,14 +30,59 @@
 
 .hp-signup {
     display: flex;
-    font-size: 22px;
+    font-family: 'Lucida Grande';
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.3;
     margin: 0 0 0 0;
     position: absolute;
     left: 53px;
+}
+
+.landing-image {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    background-image: image_url("Landing-Page-Image.jpg");
+    background-repeat: no-repeat;
 }
 
 .landing-header {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    border-top: 4px solid #EE5404;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    margin: auto 0;
+    z-index: 5;
+
+    .sign-in {
+        font-family: 'Interstate Light Cond';
+        font-size: 15px;
+        letter-spacing: 1px;
+        padding: 2px 15px;
+        height: 30px;
+        line-height: 24px;
+        margin: 0 0 0 6px;
+        border-radius: 3px;
+        background-color: transparent;
+        border: 1px solid #CBCCCB;
+        border-style: solid;
+        color: white;
+    }
+
+    .create-account {
+        font-family: 'Lucida Grande';
+        padding: 2px 16px;
+        height: 30px;
+        line-height: 24px;
+        margin: 0 0 0 6px;
+        background-color: #EE5404;
+        color: white;
+        border: 0px solid;
+        border-style: solid;
+        border-radius: 3px;
+    }
 }

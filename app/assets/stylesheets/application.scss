@@ -14,18 +14,157 @@
  *= require_self
  */
 
+@font-face {
+    font-family: 'interstatebold';
+    src: font-url('interstate_bold-webfont.woff2') format('woff2');
+    src: font-url('interstate_bold-webfont.woff') format('woff');
+    src: font-url('interstate_bold.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Interstate Black Comp';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Black Comp'), font-url('interstate-black-comp-58b64117a2ad9.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Black Cond';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Black Cond'), font-url('interstate-black-cond-58b642507872b.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Light Cond';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Light Cond'), font-url('interstate-light-cond-58b64220b1490.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Regular Comp';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Regular Comp'), font-url('interstate-regular-comp-58b641cc0aca1.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Regular Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Regular Italic'), font-url('interstate-regular-italic-58b641ecad88f.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate UltraBlack Comp';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate UltraBlack Comp'), font-url('interstate-ultrablack-comp-58b64130a8cbf.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Bold Cond';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Bold Cond'), font-url('interstate-bold-cond-58b64162258ca.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate ExtraLight Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate ExtraLight Italic'), font-url('interstate-extralight-italic-58b642045546b.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Light Italic'), font-url('interstate-light-italic-58b64147957e5.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Interstate Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Interstate Thin Italic'), font-url('interstate-thin-italic-58b641b2d5a92.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'lucida_granderegular';
+    src: font-url('lucidagrande-webfont.woff2') format('woff2');
+    src: font-url('lucidagrande-webfont.woff') format('woff');
+    src: font-url('LucidaGrande.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'lucida_grandebold';
+    src: font-url('lucidagrandebold-webfont.woff2') format('woff2');
+    src: font-url('lucidagrandebold-webfont.woff') format('woff');
+    src: font-url('LucidaGrandeBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
     height: 100%;
 }
 
  body {
-    //  background-color: #F1F2F1;
-    background-color: black;
-     font: "Lucida Grande", sans-serif;
+     background-color: #F1F2F1;
+
+     width: 80%;
+     height: 100%;
+     margin: auto 0;
  }
 
  .main-box {
-     display: flex;
-     width: 80%;
-     height: 100%;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 1240px;
+    left: 17%;
+    right: 17%;
+    margin: auto 0;
+    background-color: #FEFFFE;
+ }
+
+ @media only screen and (max-width: 1280px) {
+     .main-box {
+         display: flex;
+         position: absolute;
+         margin: auto 0;
+         height: 100%;
+         width: 1100px;
+         left: 17%;
+         right: 17%;
+     }
+ }
+
+ @media only screen and (max-width: 1100px) {
+    .main-box {
+        display: flex;
+        position: absolute;
+        margin: auto 0;
+        height: 100%;
+        width: 950px;
+        left: 17%;
+        right: 17%;
+    }
  }

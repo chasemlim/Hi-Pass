@@ -5,14 +5,16 @@ class WelcomeNavBar extends React.Component {
 
     render() {
         return (
-            <div className="landing-header">
-                <div className="hp-top-left">
-                    <div className="sc-logo"></div>
-                    <h3 className="hp-signup">Hi-Pass</h3>
-                </div>
-                <div className="hp-top-right">
-                    <button>Sign in</button>
-                    <button>Create account</button>
+            <div className="landing-image">
+                <div className="landing-header">
+                    <div className="hp-top-left">
+                        <div className="sc-logo"></div>
+                        <h3 className="hp-signup">SOUNDCLOUD</h3>
+                    </div>
+                    <div className="hp-top-right">
+                        <button className="sign-in">Sign in</button>
+                        <button className="create-account">Create account</button>
+                    </div>
                 </div>
             </div>
         )
