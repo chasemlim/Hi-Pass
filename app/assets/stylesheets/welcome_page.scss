@@ -4,8 +4,10 @@
 }
 
 .search-bar {
-    margin: auto;
+    display: inline-block;
+    margin: auto 0;
     padding: 50px 0;
+    width: 550px;
 }
 
 .welcome-search-bar {
@@ -17,7 +19,7 @@
     background-color: #F1F2F1;
     padding: 15px;
     font-size: 16px;
-    width: 600px;
+    width: 550px;
     border-radius: 3px;
 }
 
@@ -27,12 +29,40 @@
 
 .s-icon {
     position: relative;
-    right: 37px;
-    top: 2px;
+    right: -252px;
+    top: -33px;
     font-size: 21px;
     color: #656665;
 }
 
 .s-icon:hover {
     cursor: pointer;
+}
+
+.search-and-upload {
+    display: inline-block;
+    width: 300px;
+    margin: auto;
+}
+
+.welcome-or {
+    display: inline-block;
+    font-family: 'interstateextralight';
+    color: black;
+    font-size: 19px;
+    width: 40px;
+}
+
+.welcome-upload-own-button {
+    display: inline-block;
+    background-color: #F50;
+    color: white;
+    height: 46px;
+    padding: 13px 23px;
+    margin-left: 1px;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 18px;
+    border: 0px solid;
+    border-style: solid;
 }
