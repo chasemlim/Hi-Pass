@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isolateUsername = this.isolateUsername.bind(this);
         this.updateEmail = this.updateEmail.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     update(field) {
@@ -38,6 +39,18 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
+            .then(
+                () => {
+                    this.props.history.push("/");
+                    this.props.closeModal();
+                });
+    }
+
+    handleDemoSubmit(e) {
+        e.preventDefault();
+        let user = { username: "NeocolorMusic", email: "neocolormusic@gmail.com", password: "password" }
+        debugger;
+        this.props.demoLogin(user)
             .then(
                 () => {
                     this.props.history.push("/");
@@ -86,6 +99,10 @@ class SessionForm extends React.Component {
                         
                         <div className="modal-bottom-div">
                             <button className="modal-change-form" onClick={(e) => this.switchForm(e)}>{this.props.formType === 'login' ? 'Create account' : 'Sign in'}</button>
+                        </div>
+
+                        <div className="modal-demo">
+                            <button className="modal-demo-button" onClick={this.handleDemoSubmit}>Demo Login</button>
                         </div>
                 </div> 
             </div>
