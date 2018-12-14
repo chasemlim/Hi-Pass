@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class WelcomeNavBar extends React.Component {
 
@@ -12,8 +12,8 @@ class WelcomeNavBar extends React.Component {
                         <h3 className="hp-signup">HI-PASS</h3>
                     </div>
                     <div className="hp-top-right">
-                        <button className="sign-in">Sign in</button>
-                        <button className="create-account">Create account</button>
+                        <button className="sign-in" onClick={ () => dispatch(openModal('login')) }>Sign in</button>
+                        <button className="create-account" onClick={ () => dispatch(openModal('signup')) }>Create account</button>
                     </div>
                 </div>
                 <div className="landing-image-text">

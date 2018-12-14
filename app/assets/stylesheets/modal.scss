@@ -1,0 +1,190 @@
+@-webkit-keyframes slideIn {
+  from {margin-top: -1500px; } 
+  to {margin-top: -200px; }
+}
+
+@keyframes slideIn {
+  from {margin-top: -1500px; }
+  to {margin-top: -200px; }
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+// @-webkit-keyframes slideOut {
+//     from {margin-top: -200px; }
+//     to {margin-top: -1500px; }
+// }
+
+// @keyframes slideOut {
+//     from {margin-top: -200px; }
+//     to {margin-top: -1500px; }
+// }
+
+// @keyframes fadeOut {
+//     from {opacity: 1}
+//     to {opacity: 0}
+// }
+
+// @-webkit-keyframes fadeOut {
+//     from {opacity: 1}
+//     to {opacity: 0}
+// }
+
+.close {
+    color: #323332;
+
+    font-size: 23px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(242, 242, 242, .9);
+    z-index: 10;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: fadeIn;
+    animation-duration: 0.5s
+}
+
+.modal-body {
+    width: 400px;
+    height: 570px;
+    padding: 25px;
+    margin: -200px 30px 0 0;
+    background-color: #FEFFFE;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.5s;
+    animation-name: slideIn;
+    animation-duration: 0.5s
+}
+
+.modal-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-email, .modal-password {
+    font-family: 'interstateextralight';
+    color: #323332;
+    width: 95%;
+    position: relative;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 24px;
+    padding: 7px 8px;
+    outline: 0;
+    border: 1px solid #CBCCCB;
+    margin: 4px 0;
+}
+
+.modal-email {
+    margin-top: 50px;
+}
+
+.modal-email:focus, .modal-password:focus {
+    border: 1px solid #989998;
+}
+
+.modal-submit {
+    width: 100%;
+    background-color: #F50;
+    color: white;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 18px;
+    border: 0px solid;
+    border-style: solid;
+    margin: 10px 0;
+    padding: 10px 15px;
+    height: 40px;
+}
+
+.modal-sc-logo {
+    background-image: url('soundcloud-large.svg');
+    background-size: 250px 109px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 250px;
+    height: 109px;
+}
+
+.modal-line {
+    display: inline-block;
+    border-top: 1px solid #333;
+    width: 100%;
+    z-index: -5;
+}
+
+.modal-or {
+    display: flex;
+    position: relative;
+    top: -29px;
+    left: 165px;
+    width: 70px;
+    height: 40px;
+    background-color: #FEFFFE;
+    // -webkit-animation-name: slideIn;
+    // -webkit-animation-duration: 0.5s;
+    // animation-name: slideIn;
+    // animation-duration: 0.5s;
+
+}
+
+.modal-or-text {
+    margin: auto;
+    font-family: 'Lucida Grande';
+    font-size: 16px;
+    line-height: 1.3;
+    // -webkit-animation-name: slideIn;
+    // -webkit-animation-duration: 0.5s;
+    // animation-name: slideIn;
+    // animation-duration: 0.5s;
+}
+
+.modal-bottom-div {
+    display: flex;
+    margin-top: -30px;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-change-form {
+    width: 65%;
+    background-color: #F50;
+    color: white;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 18px;
+    border: 0px solid;
+    border-style: solid;
+    margin: auto;
+    padding: 10px 15px;
+    height: 40px;
+}

@@ -37,7 +37,17 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state).then(this.props.history.push("/"));
+        this.props.processForm(this.state)
+            .then(
+                () => {
+                    this.props.history.push("/");
+                    this.props.closeModal();
+                });
+    }
+
+    switchForm(e) {
+        e.preventDefault();
+        this.props.otherForm();
     }
 
     renderErrors() {
@@ -54,28 +64,30 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login-form-container">
+                <div className="modal-body">
+                    {this.renderErrors()}
+                    <div className="modal-sc-logo"></div>
+                        <form onSubmit={this.handleSubmit}>
 
+                        <input className="modal-email" type="email" value={this.state.email} placeholder="Your email address" onChange={this.updateEmail} />
 
+                            <br />
 
-                {/* // <div>
-                //     {this.renderErrors()}
-                //     <div>
-                //         <form onSubmit={this.handleSubmit}>
-                //             <label>
-                //                 Email:
-                //         <input type="email" value={this.state.email} onChange={this.updateEmail} />
-                //             </label>
-                //             <br />
-                //             <label>
-                //                 Password:
-                //         <input type="password" value={this.state.password} onChange={this.update("password")} />
-                //             </label>
-                //             <br />
-                //             <input type="submit" value={this.props.formType} />
-                //         </form>
-                //     </div>
-                // </div>  */}
+                        <input className="modal-password" type="password" value={this.state.password} placeholder="Your password" onChange={this.update("password")} />
+
+                            <br />
+                            <input className="modal-submit" type="submit" value={this.props.formType === 'login' ? 'Log In' : 'Create Account'} />
+                        </form>
+                        <div className="modal-line"></div>
+                        <div className="modal-or">
+                            <h2 className="modal-or-text">or</h2>
+                        </div>
+                        
+                        <div className="modal-bottom-div">
+                            <button className="modal-change-form" onClick={(e) => this.switchForm(e)}>{this.props.formType === 'login' ? 'Create account' : 'Sign in'}</button>
+                        </div>
+                </div> 
             </div>
         )
     }
