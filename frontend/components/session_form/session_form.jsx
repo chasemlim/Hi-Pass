@@ -49,7 +49,6 @@ class SessionForm extends React.Component {
     handleDemoSubmit(e) {
         e.preventDefault();
         let user = { username: "NeocolorMusic", email: "neocolormusic@gmail.com", password: "password" }
-        debugger;
         this.props.demoLogin(user)
             .then(
                 () => {
