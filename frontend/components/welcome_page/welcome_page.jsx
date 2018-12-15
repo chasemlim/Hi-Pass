@@ -1,7 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import SongGrid from '../songs/song_grid';
 
 class WelcomePage extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { songs: {} }
+    }
+
+    componentWillMount() {
+        this.props.fetchSongs().then( result => { this.setState({ songs: result.songs }) })
+    }
 
     render() {
         return (
@@ -18,6 +28,14 @@ class WelcomePage extends React.Component {
                         <h2 className="welcome-or">or</h2>
                         <button className="welcome-upload-own-button">Upload your own</button>
                     </div>
+                </div>
+
+                <div className="trending-text">
+                    <p>Hear what's trending for free in the Hi-Pass community</p>
+                </div>
+
+                <div className="song-grid">
+                    <SongGrid songs={this.state.songs}/>
                 </div>
             </div>
         )

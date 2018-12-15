@@ -105,6 +105,10 @@ class SessionForm extends React.Component {
                         <div className="modal-demo">
                             <button className="modal-demo-button" onClick={this.handleDemoSubmit}>Demo Login</button>
                         </div>
+
+                        <div className="modal-disclaimer">
+                        <p>Hi-Pass is a portfolio site and not meant for commercial use. No personal information is collected or required. For any questions or concerns, <a href="https://www.linkedin.com/in/chase-lim-64aba5127/">Click Here</a>.</p>
+                        </div>
                 </div> 
             </div>
         )

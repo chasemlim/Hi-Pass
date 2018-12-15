@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { login, signup } from '../../actions/session_actions';
 import WelcomePage from './welcome_page';
+import { fetchSongs } from '../../actions/song_actions';
 
 const mapStateToProps = (state) => {
 
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return ({
-        
+        fetchSongs: () => dispatch(fetchSongs())
     })
 }
 

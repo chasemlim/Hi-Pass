@@ -103,7 +103,7 @@
 }
 
 .modal-email {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .modal-email:focus, .modal-password:focus {
@@ -120,6 +120,7 @@
     border: 0px solid;
     border-style: solid;
     margin: 10px 0;
+    margin-top: 18px;
     padding: 10px 15px;
     height: 40px;
     outline: 0;
@@ -219,6 +220,18 @@
 .modal-demo-button:hover {
     cursor: pointer;
     border: 1px solid #F50;
+}
+
+.modal-disclaimer {
+    display: flex;
+    margin-top: 30px;
+    p{
+        text-align: center;
+        font-family: 'Lucida Grande';
+        font-size: 12px;
+        margin: auto;
+        color: #9FA09F;
+    }
 }
 
 //errors 

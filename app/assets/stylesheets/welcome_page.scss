@@ -1,3 +1,4 @@
+
 .welcome-page {
     display: block;
     width: 100%;
@@ -69,6 +70,112 @@
     line-height: 18px;
     border: 0px solid;
     border-style: solid;
+}
+
+.trending-text {
+    display: flex;
+    margin: -20px 700px 0 0;
+    width: 100%;
+    p {
+        font-family: 'interstateextralight';
+        font-size: 25px;
+        font-weight: 500;
+        margin: auto;
+    }
+}
+
+.song-grid {
+    margin: -100px 34px 34px 34px;
+    margin-right: 11px;
+    height: 100%;
+    // display: block;
+    z-index: 100;
+}
+
+.grid-ul {
+    list-style: none;
+    margin: 0;
+    
+    // eric
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // margin-top: 700px;
+    
+}
+
+.grid-item {
+    // box-sizing: border-box;
+    // padding-right: 23px;
+    // width: 16.666%;
+    // float: left;
+    width: 200px;
+    height: 200px;
+    background-image: url('neocolor-hctbw.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.album-art-grid {
+    // box-sizing: border-box;
+    // width: 100%;
+    // height: 100%;
+    // padding-bottom: 170px;
+    // // margin-bottom: 170px;
+    // background-image: url('neocolor-hctbw.jpg');
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    // position: relative;
+    // text-decoration: none;
+    // // @include filter-gradient(#ffb76b, #ff7f04, horizontal);
+
+    // background-image: linear-gradient(left top, #ffb76b 0%, #ffa73d 41%, #ffa73d 41%, #ff7c00 78%, #ff7f04 100%);
+
+}
+
+.grid-link {
+    text-decoration: none;
+}
+
+.grid-song-title {
+    width: 90%;
+    margin-top: -5px;
+    margin-bottom: -8px;
+    margin-left: 2px;
+    float: left;
+    font-family: 'interstateextralight';
+    font-size: 15px;
+    font-weight: 600;
+    color: black; 
+    width: 100%;   
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.grid-song-div {
+    width: 100%;
+    height: 100%;
+    margin-top: 4px;
+}
+
+.grid-song-artist {
+    // margin-top: 0px;
+    font-family: 'interstateextralight';
+    font-size: 13px;
+    color: #323332;
+    text-align: left;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.grid-link-div {
+    display: inline-block;
+    width: 100%;
+    margin-top: -8px;
+    margin-left: 2px;
 }
 
 .search-upload {

@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 import { signup, login, logout } from "./actions/session_actions";
+import { fetchSongs, fetchSong, createSong, updateSong, deleteSong } from "./actions/song_actions";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -26,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup; 
     window.login = login;
     window.logout = logout;
+
+    window.fetchSongs = fetchSongs;
+    window.fetchSong = fetchSong;
+    window.createSong = createSong;
+    window.updateSong = updateSong;
+    window.deleteSong = deleteSong;
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
