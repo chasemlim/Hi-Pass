@@ -3,8 +3,8 @@ class Api::SongsController < ApplicationController
     before_action :require_logged_in
 
     def index
-        songs = Song.all
-        render json: songs
+        @songs = Song.all
+        render json: @songs
     end
 
     def show

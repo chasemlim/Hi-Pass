@@ -37,6 +37,10 @@ class WelcomePage extends React.Component {
                 <div className="song-grid">
                     <SongGrid songs={this.state.songs}/>
                 </div>
+
+                <div className="explore-trending">
+                    <button className="explore-trending-button">Explore trending playlists</button>
+                </div>
             </div>
         )
     }

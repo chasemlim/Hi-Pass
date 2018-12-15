@@ -2,6 +2,7 @@
 .welcome-page {
     display: block;
     width: 100%;
+    background-color: #FEFFFD;
 }
 
 .search-bar {
@@ -74,7 +75,7 @@
 
 .trending-text {
     display: flex;
-    margin: -20px 700px 0 0;
+    margin: -20px 25px 0 0;
     width: 100%;
     p {
         font-family: 'interstateextralight';
@@ -85,48 +86,37 @@
 }
 
 .song-grid {
-    margin: -100px 34px 34px 34px;
+    margin: 24px 34px 34px 34px;
     margin-right: 11px;
     height: 100%;
-    // display: block;
-    z-index: 100;
 }
 
 .grid-ul {
     list-style: none;
     margin: 0;
     
-    // eric
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    // margin-top: 700px;
-    
 }
 
 .grid-item {
-    // box-sizing: border-box;
-    // padding-right: 23px;
-    // width: 16.666%;
-    // float: left;
-    width: 200px;
-    height: 200px;
-    background-image: url('neocolor-hctbw.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
+    box-sizing: border-box;
+    padding-right: 23px;
+    width: 16.666%;
+    float: left;
 }
 
 .album-art-grid {
-    // box-sizing: border-box;
-    // width: 100%;
-    // height: 100%;
-    // padding-bottom: 170px;
-    // // margin-bottom: 170px;
-    // background-image: url('neocolor-hctbw.jpg');
-    // background-repeat: no-repeat;
-    // background-size: 100%;
-    // position: relative;
-    // text-decoration: none;
-    // // @include filter-gradient(#ffb76b, #ff7f04, horizontal);
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    background-image: url('neocolor-hctbw.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    // @include filter-gradient(#ffb76b, #ff7f04, horizontal);
 
     // background-image: linear-gradient(left top, #ffb76b 0%, #ffa73d 41%, #ffa73d 41%, #ff7c00 78%, #ff7f04 100%);
 
@@ -137,16 +127,15 @@
 }
 
 .grid-song-title {
-    width: 90%;
-    margin-top: -5px;
-    margin-bottom: -8px;
-    margin-left: 2px;
+    margin-bottom: -10%;
+    margin-top: 3%;
     float: left;
     font-family: 'interstateextralight';
     font-size: 15px;
     font-weight: 600;
     color: black; 
-    width: 100%;   
+    width: 100%; 
+    height: 100%;  
     text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -156,7 +145,9 @@
 .grid-song-div {
     width: 100%;
     height: 100%;
-    margin-top: 4px;
+    position: relative;
+    padding: 99% 0 0 0;
+    margin-left: 2px;
 }
 
 .grid-song-artist {
@@ -174,8 +165,29 @@
 .grid-link-div {
     display: inline-block;
     width: 100%;
-    margin-top: -8px;
+    position: relative;
     margin-left: 2px;
+    margin-top: 0%;
+}
+
+.explore-trending {
+    display: flex;
+    width: 100%;
+    margin: 25px 0;
+    padding-top: 10px;
+}
+
+.explore-trending-button {
+    font-family: 'interstateextralight';
+    font-size: 18px;
+    font-weight: 600;
+    margin: auto;
+    background-color: #F50;
+    color: white;
+    height: 46px;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 3px;
 }
 
 .search-upload {

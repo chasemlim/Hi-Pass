@@ -14,16 +14,17 @@ class SongGrid extends React.Component {
                                     {// logic for album art goes here 
                                     }
                                 </div>
-                                <div className="grid-song-div">
+                            </Link>
+                            <Link to={`/songs/${song.id}`}>
+                            <div className="grid-song-div">
                                     <p className="grid-song-title">{song.title}</p>
-                                </div>
+                            </div>
                             </Link>
                             <div className="grid-link-div">
                                 <Link className="grid-link" to={`/users/${song.user_id}`}>
                                     <p className="grid-song-artist">{song.artist}</p>
                                 </Link>
                             </div>
-                            
                         </li>
                     )
                 }) }
