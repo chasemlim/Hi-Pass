@@ -8,7 +8,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-import WelcomeContainer from './welcome/welcome_container';
+// import WelcomeContainer from './welcome/welcome_container';
 
 import WelcomeNavBarContainer from './welcome_navbar/welcome_navbar_container';
 import WelcomePageContainer from './welcome_page/welcome_page_container';

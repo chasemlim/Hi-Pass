@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Welcome from './welcome';
+import MainHeader from './main_header';
 
 const mapStateToProps = (state) => {
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
     })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
+export default connect(mapStateToProps, mapDispatchToProps)(MainHeader);
