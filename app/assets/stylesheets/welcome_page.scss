@@ -111,7 +111,7 @@
     height: 100%;
     padding-bottom: 100%;
     margin-bottom: -100%;
-    background-image: url('neocolor-hctbw.jpg');
+    background-image: image_url('neocolor-hctbw.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -203,7 +203,7 @@
     width: 724px;
     height: 390px;
     align-self: flex-end;
-    background-image: url('never-stop-listening.jpg');
+    background-image: image_url('never-stop-listening.jpg');
 }
 
 .never-stop-listening-text {
@@ -250,7 +250,7 @@
     height: 350px;
 
     .creators-img {
-        background-image: url('sc-creator.jpg');
+        background-image: image_url('sc-creator.jpg');
         width: 1240px;
         height: 350px;
         display: flex;
