@@ -1,7 +1,7 @@
 .hp-top-left {
     position: absolute;
     top: 13px;
-    left: 19px;
+    left: 30px;
     display: flex;
     width: 184px;
     height: 46px;
@@ -13,9 +13,9 @@
 .hp-top-right {
     display: flex;
     align-items: baseline;
-    position: absolute;
+    position: relative;
     top: 20px;
-    right: 30px;
+    right: -1000px;
 }
 
 .sc-logo {
@@ -42,11 +42,10 @@
 
 .landing-image {
     display: flex;
-    width: 100%;
+    width: 1240px;
     min-height: 450px;
     background-image: image_url("Landing-Page-Image.jpg");
     background-repeat: no-repeat;
-    z-index: 100;
 }
 
 .landing-image-text {
@@ -89,7 +88,7 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     border-top: 4px solid #EE5404;
-    width: 100%;
+    width: 1240px;
     height: 10%;
     position: absolute;
     margin: 0 auto;

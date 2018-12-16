@@ -134,13 +134,22 @@ button:hover {
     cursor: pointer;
 }
 
+.main-container {
+    display: flex;
+    width: 1920px;
+    
+    text-align: center;
+    align-content: center;
+    // padding: 0 30px;
+}
+
  .main-box {
     display: flex;
-    position: absolute;
+    // position: absolute;
     height: 100%;
-    // width: 1240px;
-    width: 64.5%;
-    left: 17.75%;
+    min-width: 1240px;
+    // width: 64.5%;
+    // left: 17.75%;
     // right: 17%;
     margin: 0 auto;
     background-color: #FEFFFE;
@@ -148,32 +157,32 @@ button:hover {
     flex-direction: column;
  }
 
- @media only screen and (max-width: 1280px) {
-     .main-box {
-         display: flex;
-         position: absolute;
-         margin: 0 auto;
-         height: 100%;
-        //  width: 1100px;
-    width: 64.5%;
-    left: 17.75%;
-        //  right: 17%;
-        text-align: center;
-        flex-direction: column;
-     }
- }
+//  @media only screen and (max-width: 1280px) {
+//      .main-box {
+//          display: flex;
+//          position: absolute;
+//          margin: 0 auto;
+//          height: 100%;
+//         //  width: 1100px;
+//     width: 64.5%;
+//     left: 17.75%;
+//         //  right: 17%;
+//         text-align: center;
+//         flex-direction: column;
+//      }
+//  }
 
- @media only screen and (max-width: 1100px) {
-    .main-box {
-        display: flex;
-        position: absolute;
-        margin: 0 auto;
-        height: 100%;
-        // width: 950px;
-    width: 64.5%;
-    left: 17.75%;
-        // right: 17%;
-        text-align: center;
-        flex-direction: column;
-    }
- }
+//  @media only screen and (max-width: 1100px) {
+//     .main-box {
+//         display: flex;
+//         position: absolute;
+//         margin: 0 auto;
+//         height: 100%;
+//         // width: 950px;
+//     width: 64.5%;
+//     left: 17.75%;
+//         // right: 17%;
+//         text-align: center;
+//         flex-direction: column;
+//     }
+//  }

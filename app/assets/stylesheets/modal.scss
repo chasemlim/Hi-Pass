@@ -1,11 +1,11 @@
 @-webkit-keyframes slideIn {
   from {margin-top: -1500px; } 
-  to {margin-top: -200px; }
+  to {margin-top: 0px; }
 }
 
 @keyframes slideIn {
   from {margin-top: -1500px; }
-  to {margin-top: -200px; }
+  to {margin-top: 0px; }
 }
 
 @-webkit-keyframes fadeIn {
@@ -73,7 +73,9 @@
     width: 400px;
     height: 570px;
     padding: 25px;
-    margin: -200px 30px 0 0;
+    top: -9.25%;
+    position: relative;
+    // margin: -200px 30px 0 0;
     background-color: #FEFFFE;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 0.5s;

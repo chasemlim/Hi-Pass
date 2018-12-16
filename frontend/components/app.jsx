@@ -19,9 +19,8 @@ const App = () => (
     <main className="main-container">
         <Modal />
         <div className="main-box">
-            <WelcomeNavBarContainer />
-            <WelcomePageContainer />
             <Switch>
+                <Route path="/" component={ WelcomePageContainer } />
                 <Route path="users/:username/:song_id" />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
                 <Redirect to="/" />

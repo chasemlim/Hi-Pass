@@ -2,6 +2,7 @@
 .welcome-page {
     display: block;
     width: 100%;
+    height: 740px;
     background-color: #FEFFFD;
 }
 
@@ -86,9 +87,9 @@
 }
 
 .song-grid {
-    margin: 24px 34px 34px 34px;
+    margin: 24px 34px 0 34px;
     margin-right: 11px;
-    height: 100%;
+    height: 453px;
 }
 
 .grid-ul {
@@ -173,7 +174,7 @@
 .explore-trending {
     display: flex;
     width: 100%;
-    margin: 25px 0;
+    margin: 25px 0 68px 0;
     padding-top: 10px;
 }
 
@@ -190,8 +191,55 @@
     border-radius: 3px;
 }
 
-.search-upload {
-    // display: inline-block;
-    // margin: auto 0;
-    // padding: 50px 0;
+.never-stop-listening-div {
+    display: flex;
+    justify-content: space-around;
+    height: 450px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.never-stop-listening-img {
+    width: 724px;
+    height: 390px;
+    align-self: flex-end;
+    background-image: url('never-stop-listening.jpg');
+}
+
+.never-stop-listening-text {
+    font-family: 'interstateextralight';
+    float: left;
+    height: 390px;
+    width: 325px;
+    right: 50px;
+    position: relative;
+    align-self: flex-end;
+    align-content: center;
+
+    .nsl-header {
+        float: left;
+        font-weight: 600;
+        font-size: 36px;
+        color: #323332;
+        margin: 36px 0 0 0;
+    }
+
+    .nsl-gradient {
+        float: left;
+        display: block;
+        width: 70px;
+        height: 3px;
+        background-image: linear-gradient(to right, #7d01a1, #f30 50%, #f50);
+        margin: 8px 255px 20px 0;
+    }
+
+    .nsl-description {
+        float: left;
+        text-align: left;
+        font-size: 24px;
+        color: #323332;
+        font-weight: 600;
+        margin-top: 0;
+        line-height: 1.4;
+    }
 }
