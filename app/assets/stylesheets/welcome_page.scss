@@ -243,3 +243,77 @@
         line-height: 1.4;
     }
 }
+
+.creators-div {
+    display: flex;
+    width: 1240px;
+    height: 350px;
+
+    .creators-img {
+        background-image: url('sc-creator.jpg');
+        width: 1240px;
+        height: 350px;
+        display: flex;
+
+        .creators-text {
+            font-family: 'interstateextralight';
+            color: #FEFFFE;
+            float: left;
+            text-align: left;
+            width: 520px;
+            height: 200px;
+            margin: auto 0 auto 60px;
+            align-content: center;
+
+            .creators-header {
+                font-size: 37px;
+                margin: -15px 0 0 0;
+            }
+
+            .creators-description {
+                font-size: 24px;
+                margin-top: 5px;
+            }
+        }
+
+        .creators-button {
+            font-family: 'interstateextralight';
+            font-size: 18px;
+            background: transparent;
+            border: 1px solid #FEFFFE;
+            color: #FEFFFE;
+            line-height: 18px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-align: center;
+            padding: 13px 24px;
+        }
+    }
+}
+
+.call-to-action-div {
+    width: 1240px;
+    height: 375px;
+    display: flex;
+    background-color: #FEFFFC;
+}
+
+.cta-container {
+    margin: auto;
+}
+
+.cta-header {
+    font-family: 'interstateextralight';
+    font-size: 36px;
+    font-weight: 600;
+    color: #323332;
+    margin-bottom: 0;
+}
+
+.cta-description {
+    font-family: 'interstateextralight';
+    font-size: 24px;
+    font-weight: 600;
+    color: #323332;
+    margin-top: 0;
+}

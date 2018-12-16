@@ -53,6 +53,32 @@ class WelcomePage extends React.Component {
                             <p className="nsl-description">Hi-Pass will be available on Web, iOS, Android, Sonos, Chromecast, and Xbox One. Eventually.</p>
                         </div>
                     </div>
+
+                    <div className="creators-div">
+                        <div className="creators-img">
+                            <div className="creators-text">
+                                <p className="creators-header">Calling all creators</p>
+                                <p className="creators-description">Get on Hi-Pass to connect with fans, share your sounds, and grow your audience. What are you waiting for?</p>
+                                <button className="creators-button">Find out more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="call-to-action-div">
+                        <div className="cta-container">
+                            <div className="call-to-action-text">
+                                <p className="cta-header">Thanks for listening. Now join in.</p>
+                                <p className="cta-description">Save tracks, follow artists and build playlists. All for free.</p>
+                            </div>
+                            <div className="create-acct-button">
+                                <button className="cta-create-account-button">Create account</button>
+                            </div>
+                            <div className="sign-in-button">
+                                <p className="already-text">Already have an account?</p>
+                                <button className="cta-sign-in-button">Sign in</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
         )
