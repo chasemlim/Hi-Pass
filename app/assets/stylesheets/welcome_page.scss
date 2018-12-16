@@ -304,8 +304,8 @@
 
 .cta-header {
     font-family: 'interstateextralight';
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 37px;
+    font-weight: 1000;
     color: #323332;
     margin-bottom: 0;
 }
@@ -316,4 +316,48 @@
     font-weight: 600;
     color: #323332;
     margin-top: 0;
+}
+
+.create-acct-button {
+    margin: 10px 0 10px;
+}
+
+.cta-create-account-button {
+    background-color: #f50;
+    border-color: #f50;
+    color: #fff;
+    line-height: 18px;
+    border-radius: 3px;
+    font-family: 'interstateextralight';
+    font-size: 18px;
+    padding: 13px 35px;
+}
+
+.sign-in-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.already-text {
+    font-family: 'interstateextralight';
+    font-size: 13px;
+    color: #323332;
+    font-weight: 600;
+    margin: 0 14px 0 0;
+}
+
+.cta-sign-in-button {
+    font-family: 'interstateextralight';
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 15px;
+    height: 40px;
+    color: #323332;
+    background-color: transparent;
+    border: 1px solid #E4E5E4;
+    border-radius: 3px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import SongGrid from '../songs/song_grid';
 import WelcomeNavBarContainer from '../welcome_navbar/welcome_navbar_container';
+import { openModal } from '../../actions/modal_actions';
 
 class WelcomePage extends React.Component {
 
@@ -71,11 +72,11 @@ class WelcomePage extends React.Component {
                                 <p className="cta-description">Save tracks, follow artists and build playlists. All for free.</p>
                             </div>
                             <div className="create-acct-button">
-                                <button className="cta-create-account-button">Create account</button>
+                                <button className="cta-create-account-button" onClick={() => dispatch(openModal('signup'))}>Create account</button>
                             </div>
                             <div className="sign-in-button">
                                 <p className="already-text">Already have an account?</p>
-                                <button className="cta-sign-in-button">Sign in</button>
+                                <button className="cta-sign-in-button" onClick={() => dispatch(openModal('login'))}>Sign in</button>
                             </div>
                         </div> 
                     </div>
