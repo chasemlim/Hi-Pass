@@ -14,13 +14,16 @@ import WelcomeNavBarContainer from './welcome_navbar/welcome_navbar_container';
 import WelcomePageContainer from './welcome_page/welcome_page_container';
 import Modal from './modal/modal';
 import SongIndexContainer from './songs/song_index_container';
+import StreamContainer from './stream/stream_container';
 
 const App = () => (
     <main className="main-container">
         <Modal />
         <div className="main-box">
             <Switch>
+                <Route path="/stream" component={StreamContainer} />
                 <Route path="/" component={ WelcomePageContainer } />
+
                 <Route path="users/:username/:song_id" />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
                 <Redirect to="/" />

@@ -1,0 +1,95 @@
+.main-header {
+    background-color: #323332;
+    width: 1240px;
+    height: 46px;
+    padding: 0 340px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.options-dropdown {
+    position: relative;
+    display: inline-block;
+    right: 0px;
+    height: 46px;
+    width: 46px;
+}
+
+.options-dropdown:hover {
+    background-color: #101110;
+
+    .options-drop-button {
+        color: #FEFFFE;
+    }
+}
+
+.options-drop-button {
+    background: transparent;
+    color: #CBCCCB;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
+}
+
+// .options-drop-button:hover {
+//     color: #FEFFFE;
+// }
+
+.options-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #101110;
+    min-width: 150px;
+    padding: 0 0;
+    z-index: 1;
+    float: right;
+    right: 0;
+}
+
+.show {
+    display: block;
+}
+
+.show-color {
+    background-color: #101110;
+}
+
+.logout-button {
+    font-family: 'interstateextralight';
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    width: 150px;
+    color: #ccc;
+    padding: 14px 10px;
+    background-color: transparent;
+    border: 0;
+}
+
+.logout-button:hover {
+    color: #FCFDFC;
+    background-color: #323332;
+}
+
+.mail-icon {
+    height: 46px;
+    width: 46px;
+    display: flex;
+}
+
+.mail-icon-button {
+    background: transparent;
+    color: #CBCCCB;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 10px 0 10px 11px;
+}
+
+.mail-icon:hover {
+    background-color: #101110;
+}
+
+.mail-icon-button:hover {
+    color: #FEFFFE;
+}
