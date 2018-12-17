@@ -76,20 +76,228 @@
     height: 46px;
     width: 46px;
     display: flex;
+    cursor: pointer;
 }
 
 .mail-icon-button {
     background: transparent;
     color: #CBCCCB;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
-    margin: 10px 0 10px 11px;
+    margin: 13px 0 10px 14px;
 }
 
 .mail-icon:hover {
     background-color: #101110;
+
+    .mail-icon-button {
+        color: #FEFFFE;
+    }
 }
 
-.mail-icon-button:hover {
+.notif-icon {
+    height: 46px;
+    width: 46px;
+    display: flex;
+    cursor: pointer;
+}
+
+.notif-icon-button {
+    background: transparent;
+    color: #CBCCCB;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 14px 0 10px 15px;
+}
+
+.notif-icon:hover {
+    background-color: #101110;
+
+    .notif-icon-button {
+        color: #FEFFFE;
+    }
+}
+
+.user-dropdown {
+    width: 155px;
+    height: 46px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+}
+
+.round-profile-pic {
+    background-image: image_url("sample-profile-pic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin: 0 6px 0 8px;
+}
+
+.username {
+    min-width: 85px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #CBCCCB;
+    font-family: 'interstateextralight';
+    font-size: 14px;
+    font-weight: 600;
+    // margin-right: 9px;
+}
+
+.arrow-icon {
+    min-width: 22px;
+    margin-left: 2px;
+    margin-right: 8px;
+}
+
+.arrow {
+    margin-top: 8px;
+    color: #CBCCCB;
+    font-size: 13px;
+}
+
+.user-dropdown:hover {
+    cursor: pointer;
+
+    .username, .arrow {
+        color: #FEFFFE;
+    }
+}
+
+.user-dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #101110;
+    min-width: 135px;
+    padding: 0 0;
+    z-index: 1;
+    float: left;
+    left: -157px;
+    bottom: -39px;
+}
+
+.user-show {
+    display: block;
+}
+
+.profile-tab {
+    width: 135px;
+    height: 32px;
+    display: flex;
+}
+
+.profile-button {
+    color: #C2C3C2;
+    font-size: 12px;
+    margin: auto 9px;
+}
+
+.profile-text {
+    color: #C2C3C2;
+    font-family: 'interstateextralight';
+    font-size: 13px;
+    margin: auto 0;
+    font-weight: 600;
+}
+
+.pro-and-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 46px;
+}
+
+.pro-upload-div {
+    width: 65px;
+    height: 46px;
+}
+
+.pro-upload-div:hover {
+    cursor: pointer;
+
+    .header-pro-upload-text {
+        color: #FEFFFE;
+    }
+}
+
+.header-pro-upload-text {
+    font-family: 'interstateextralight';
+    color: #C2C3C2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pro:hover {
+
+    .coming-soon-text {
+        visibility: visible;
+    }
+}
+
+.coming-soon-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: #323332;
     color: #FEFFFE;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    left: 1150px;
+    z-index: 1;
+
+    font-family: 'interstateextralight';
+    font-size: 12px;
+}
+
+.coming-soon-text::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #323332 transparent;
+}
+
+.header-search-div {
+    display: flex;
+}
+
+.header-search-bar {
+    font-family: 'interstateextralight';
+    margin: auto;
+    color: #9D9E9D;
+    outline: 0;
+    border: 0;
+    background-color: #F1F2F1;
+    padding: 5px 7px;
+    font-size: 14px;
+    width: 402px;
+    height: 28px;
+    border-radius: 4px;
+    line-height: 20px;
+}
+
+.header-search-bar:focus {
+    outline: 0;
+}
+
+.header-s-icon {
+    position: relative;
+    left: -25px;
+    bottom: 0;
+    font-size: 15px;
+    color: #656665;
+}
+
+.header-s-icon:hover {
+    cursor: pointer;
 }
