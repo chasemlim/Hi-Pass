@@ -49,6 +49,30 @@ class MainHeader extends React.Component {
         return (
             <div className="main-header">
 
+                <div className="header-orange">
+                    <div className="header-sc-logo"></div>
+                </div>
+
+                <div className="header-nav-div">
+                    <ul>
+                        <li>
+                            <div>
+                                <p>Home</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>Stream</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>Collection</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
                 <div className="header-search-div">
                     <form action="">
                         <input className="header-search-bar" type="search" placeholder="Search for artists, bands, tracks, podcasts" />

@@ -269,6 +269,7 @@
 
 .header-search-div {
     display: flex;
+    padding-left: 10px;
 }
 
 .header-search-bar {
@@ -299,5 +300,58 @@
 }
 
 .header-s-icon:hover {
+    cursor: pointer;
+}
+
+.header-nav-div {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    li {
+        float: left;
+    }
+
+    li div {
+        display: flex;
+        text-align: center;
+        text-decoration: none;
+        width: 104px;
+        height: 46px;
+        border-right: 1px solid #101110;
+
+        p {
+            font-family: 'interstateextralight';
+            color: #C2C3C2;
+            margin: auto;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+    }
+    
+    li:hover {
+        cursor: pointer;
+    }
+}
+
+.header-orange {
+    background: linear-gradient(#f70, #f30);
+    width: 69px;
+    height: 46px;
+}
+
+.header-sc-logo {
+    background-image: image_url("main-header-sc.png");
+    background-size: 48px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 46px;
+    width: 69px;
+}
+
+.header-orange:hover, .header-sc-logo:hover {
     cursor: pointer;
 }
