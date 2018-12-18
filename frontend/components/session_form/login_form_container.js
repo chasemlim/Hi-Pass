@@ -5,10 +5,11 @@ import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, session: { currentUserId } }) => {
     return ({
         errors: errors.session,
-        formType: 'login'
+        formType: 'login',
+        currentUserId
     });
 };
 

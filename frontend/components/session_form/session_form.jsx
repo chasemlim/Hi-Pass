@@ -11,6 +11,13 @@ class SessionForm extends React.Component {
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
+    componentDidUpdate() {
+        debugger
+        if (this.props.currentUserId) {
+            this.props.history.push("/stream");
+        }
+    }
+
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value

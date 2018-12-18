@@ -7,6 +7,8 @@ class MainHeader extends React.Component {
     constructor(props) {
         super(props);
         this.dropdown = this.dropdown.bind(this);
+        this.attached = false;
+        this.userAttached = false;
     }
 
     loggedOutNavBar() {
@@ -70,15 +72,16 @@ class MainHeader extends React.Component {
 
     dropdown(e) {
         e.preventDefault();
-
         document.getElementById("dropdown").classList.add("show");
         document.getElementById("dropdown-div").classList.add("show-color");
         let dropdownContent = document.querySelector(".options-dropdown-content");
+
         document.body.addEventListener('click', (e) => {
-            if(e.target.closest(".options-dropdown-content")) return;
+            if (e.target.closest(".options-dropdown-content")) return;
             dropdownContent.classList.remove("show");
             document.getElementById("dropdown-div").classList.remove("show-color");
         })
+
     }
 
     userDropdown(e) {
@@ -87,8 +90,9 @@ class MainHeader extends React.Component {
         document.getElementById("user-dropdown").classList.add("user-show");
         document.getElementById("user-dropdown-div").classList.add("show-color");
         let dropdownContent = document.querySelector(".user-dropdown-content");
+
         document.body.addEventListener('click', (e) => {
-            if(e.target.closest(".user-dropdown-content")) return;
+            if (e.target.closest(".user-dropdown-content")) return;
             dropdownContent.classList.remove("user-show");
             document.getElementById("user-dropdown-div").classList.remove("show-color");
         })
