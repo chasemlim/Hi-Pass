@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         this.updateEmail = this.updateEmail.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.handleErrors = this.handleErrors.bind(this);
     }
 
     // componentDidUpdate() {
@@ -77,18 +78,40 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
+        
+        if (this.props.errors.length > 0) {
+
+            if (!document.getElementById("errors")) return;
+            
+            document.getElementById("errors").classList.add("show-errors");
+
+            setTimeout(() => {
+                document.getElementById("errors").classList.remove("show-errors");
+            }, 5000)
+        }
 
         return (
-            <div className="errors-div">
+            <div id="errors" className="errors-div">
                 <ul>
                     {this.props.errors.map((error, i) => (
                         <li className="error" key={`error-${i}`}>
-                            {error}
+                            <p>{error}</p>   
                         </li>
                     ))}
                 </ul>
             </div>
         );
+    }
+
+    removeErrorClass() {
+
+    }
+
+    handleErrors() {
+        if (this.props.errors.length > 0) {
+            this.renderErrors();
+            document.getElementById("errors").classList.add("show");
+        }
     }
 
     render() {
