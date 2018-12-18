@@ -30,7 +30,7 @@ const App = () => (
 
                 <Route path="users/:username/:song_id" />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
-                {/* <Redirect to="/" /> */}
+                <Redirect to="/stream" />
             </Switch>
         </div>
     </main>
