@@ -20,18 +20,17 @@ import MainHeaderContainer from './main_header/main_header_container';
 const App = () => (
     <main className="main-container">
         <Modal />
-        if () {
 
-            // Make some logic here to render main_header if current user
-        }
+        
+
         <div className="main-box">
             <Switch>
-                <Route path="/stream" component={StreamContainer} />
+                <Route path="/stream" component={ StreamContainer } />
                 <Route path="/" component={ WelcomePageContainer } />
 
                 <Route path="users/:username/:song_id" />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
-                <Redirect to="/" />
+                {/* <Redirect to="/" /> */}
             </Switch>
         </div>
     </main>

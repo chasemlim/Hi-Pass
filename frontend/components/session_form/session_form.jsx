@@ -9,14 +9,15 @@ class SessionForm extends React.Component {
         this.isolateUsername = this.isolateUsername.bind(this);
         this.updateEmail = this.updateEmail.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
-    componentDidUpdate() {
-        debugger
-        if (this.props.currentUserId) {
-            this.props.history.push("/stream");
-        }
-    }
+    // componentDidUpdate() {
+    //     debugger
+    //     if (this.props.currentUserId) {
+    //         this.props.history.push("/stream");
+    //     }
+    // }
 
     update(field) {
         return e => this.setState({
@@ -43,13 +44,18 @@ class SessionForm extends React.Component {
         return "";
     }
 
+    closeModal() {
+        this.props.clearErrors();
+        this.props.closeModal();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
             .then(
                 () => {
-                    this.props.history.push("/");
-                    this.props.closeModal();
+                    this.props.history.push("/stream");
+                    this.closeModal();
                 });
     }
 
@@ -59,17 +65,19 @@ class SessionForm extends React.Component {
         this.props.demoLogin(user)
             .then(
                 () => {
-                    this.props.history.push("/");
-                    this.props.closeModal();
+                    this.props.history.push("/stream");
+                    this.closeModal();
                 });
     }
 
     switchForm(e) {
         e.preventDefault();
         this.props.otherForm();
+        this.props.clearErrors();
     }
 
     renderErrors() {
+
         return (
             <div className="errors-div">
                 <ul>
