@@ -1,12 +1,19 @@
 .main-header {
     background-color: #323332;
-    width: 100%;
+    width: 100vw;
     height: 46px;
     margin: 0 auto;
     padding: 0 inherit;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 0 auto;
 }
 
 .options-dropdown {
