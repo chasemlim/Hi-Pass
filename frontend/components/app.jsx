@@ -15,10 +15,15 @@ import WelcomePageContainer from './welcome_page/welcome_page_container';
 import Modal from './modal/modal';
 import SongIndexContainer from './songs/song_index_container';
 import StreamContainer from './stream/stream_container';
+import MainHeaderContainer from './main_header/main_header_container';
 
 const App = () => (
     <main className="main-container">
         <Modal />
+        if () {
+
+            // Make some logic here to render main_header if current user
+        }
         <div className="main-box">
             <Switch>
                 <Route path="/stream" component={StreamContainer} />

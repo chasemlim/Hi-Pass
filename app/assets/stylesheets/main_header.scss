@@ -1,8 +1,9 @@
 .main-header {
     background-color: #323332;
-    width: 1240px;
+    width: 100%;
     height: 46px;
-    padding: 0 340px;
+    margin: 0 auto;
+    padding: 0 inherit;
     display: flex;
     justify-content: flex-end;
     align-items: center;

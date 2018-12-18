@@ -121,9 +121,9 @@ html {
  body {
      background-color: #F1F2F1;
 
-     width: 80%;
+    //  width: 80%;
      height: 100%;
-     margin: auto 0;
+     margin: 0 auto;
  }
 
 button:focus {
@@ -136,8 +136,8 @@ button:hover {
 
 .main-container {
     display: flex;
-    width: 1920px;
-    
+    // width: 1920px;
+    width: 100%;
     text-align: center;
     align-content: center;
     // padding: 0 30px;
