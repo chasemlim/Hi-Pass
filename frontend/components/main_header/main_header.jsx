@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 class MainHeader extends React.Component {
     
@@ -10,11 +11,59 @@ class MainHeader extends React.Component {
 
     loggedOutNavBar() {
         return (
-        <div>
-            <Link to="/login">Log in</Link>
-            <Link to="/signup">Create account</Link>
-            <i className="fas fa-ellipsis-h"></i>
-        </div>
+            <div className="main-header">
+
+                <div className="header-orange-lo">
+                    <div className="header-sc-logo-lo"></div>
+                    <p className="header-sc-text">HI-PASS</p>
+                </div>
+
+                <div className="header-nav-div">
+                    <ul>
+                        <li>
+                            <div>
+                                <p>Home</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>Stream</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>Collection</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="header-search-div">
+                    <form action="">
+                        <input className="header-search-bar" type="search" placeholder="Search for artists, bands, tracks, podcasts" />
+                        <i className="fas fa-search header-s-icon"></i>
+                    </form>
+                </div>
+
+                <div className="header-so-create-div">
+                    <button className="header-sign-in" onClick={() => dispatch(openModal('login'))}>Sign in</button>
+                    <button className="header-create-account" onClick={() => dispatch(openModal('signup'))}>Create account</button>
+                </div>
+
+                <div className="pro-and-upload-so">
+                    <div className="pro-upload-div-so">
+                        <p className="header-pro-upload-text-so">Upload</p>
+                    </div>
+                </div>
+
+                <div id="dropdown-div" className="options-dropdown" onClick={this.dropdown}>
+                    <i className="fas fa-ellipsis-h options-drop-button-so"></i>
+                    <div id="dropdown" className="options-dropdown-content">
+                        <button className="logout-button" onClick={this.props.logout}>Sign out</button>
+                    </div>
+                </div>
+
+            </div>
         );
 
     };

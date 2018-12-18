@@ -19,7 +19,7 @@
 .options-dropdown:hover {
     background-color: #101110;
 
-    .options-drop-button {
+    .options-drop-button, .options-drop-button-so {
         color: #FEFFFE;
     }
 }
@@ -331,7 +331,7 @@
 
 
     }
-    
+
     li:hover {
         cursor: pointer;
     }
@@ -354,4 +354,116 @@
 
 .header-orange:hover, .header-sc-logo:hover {
     cursor: pointer;
+}
+
+.pro-and-upload-so {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 46px;
+    margin-left: -5px;
+    margin-right: 5px;
+}
+
+.header-pro-upload-text-so {
+    font-family: 'interstateextralight';
+    color: #C2C3C2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pro-upload-div-so:hover {
+    cursor: pointer;
+
+    .header-pro-upload-text-so {
+        color: #FEFFFE;
+    }
+}
+
+.header-so-create-div {
+    padding: 9px 10px 10px 10px;
+    width: 202px;
+    height: 26px;
+    display: flex;
+}
+
+.header-sign-in {
+    font-family: 'interstateextralight';
+    color: #FCFDFC;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid #656665;
+    float: left;
+    margin-left: -5px;
+    margin-right: 10px;
+    height: 26px;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.header-sign-in:hover {
+    cursor: pointer;
+    border: 1px solid #989998;
+}
+
+.header-create-account {
+    background-color: #f50;
+    font-family: 'interstateextralight';
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    height: 26px;
+    padding: 2px 11px 2px 10px;
+    border: 0;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+
+.header-create-account:hover {
+    cursor: pointer;
+}
+
+.header-orange-lo {
+    background: linear-gradient(#f70, #f30);
+    width: 166px;
+    height: 46px;
+    display: flex;
+}
+
+.header-orange-lo:hover {
+    cursor: pointer;
+}
+
+.header-sc-logo-lo {
+    background-image: image_url("main-header-sc.png");
+    background-size: 48px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 46px;
+    min-width: 69px;
+    max-width: 69px;
+}
+
+.header-sc-text {
+    display: flex;
+    font-family: 'Lucida Grande';
+    color: #FDFBFD;
+    font-size: 15px;
+    // font-weight: 600;
+    align-items: center;
+    letter-spacing: 0.1em;
+    justify-content: center;
+    width: 83px;
+    height: 46px;
+    margin: 0;
+}
+
+.options-drop-button-so {
+    background: transparent;
+    color: #CBCCCB;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 12px 0 10px 0;
 }
