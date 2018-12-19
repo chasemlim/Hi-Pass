@@ -9,9 +9,9 @@ export const receiveSongs = songs => ({
     songs
 })
 
-export const receiveSong = song => ({
+export const receiveSong = payload => ({
     type: RECEIVE_SONG,
-    song
+    payload
 })
 
 export const removeSong = id => ({

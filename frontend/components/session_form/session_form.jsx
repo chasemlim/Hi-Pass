@@ -71,6 +71,8 @@ class SessionForm extends React.Component {
                 });
     }
 
+    
+
     switchForm(e) {
         e.preventDefault();
         this.props.otherForm();
@@ -81,7 +83,7 @@ class SessionForm extends React.Component {
         
         if (this.props.errors.length > 0) {
 
-            if (!document.getElementById("errors")) return;
+            if (!document.getElementById("errors")) return <div id="errors" className="no-display"></div>;
             
             document.getElementById("errors").classList.add("show-errors");
 
@@ -103,10 +105,6 @@ class SessionForm extends React.Component {
         );
     }
 
-    removeErrorClass() {
-
-    }
-
     handleErrors() {
         if (this.props.errors.length > 0) {
             this.renderErrors();
@@ -115,10 +113,11 @@ class SessionForm extends React.Component {
     }
 
     render() {
+        let errors = this.renderErrors();
         return (
             <div className="login-form-container">
                 <div className="modal-body">
-                    {this.renderErrors()}
+                    {errors}
                     <div className="modal-sc-logo"></div>
                         <form onSubmit={this.handleSubmit}>
 

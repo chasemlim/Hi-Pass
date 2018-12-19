@@ -7,11 +7,12 @@ import {
 const songsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
+
     switch (action.type) {
         case RECEIVE_ALL_SONGS:
             return action.songs;
         case RECEIVE_SONG:
-            newState = Object.assign({}, state, { [action.song.id]: action.song })
+            newState = Object.assign({}, state, action.payload.songs)
         case REMOVE_SONG:
             newState = Object.assign({}, state);
             delete newState[action.songId];
