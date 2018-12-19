@@ -8,9 +8,13 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.isolateUsername = this.isolateUsername.bind(this);
         this.updateEmail = this.updateEmail.bind(this);
-        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+
         this.closeModal = this.closeModal.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
+        this.handleDemoSubmitYeah = this.handleDemoSubmitYeah.bind(this);
+
+        this.incs = 0;
+        this.incs2 = 0;
     }
 
     // componentDidUpdate() {
@@ -27,6 +31,7 @@ class SessionForm extends React.Component {
     }
 
     updateEmail(e) {
+        debugger;
         e.preventDefault();
         let email = e.target.value
         let username = this.isolateUsername(email);
@@ -60,18 +65,44 @@ class SessionForm extends React.Component {
                 });
     }
 
-    handleDemoSubmit(e) {
-        e.preventDefault();
-        let user = { username: "NeocolorMusic", email: "neocolormusic@gmail.com", password: "password" }
-        this.props.demoLogin(user)
-            .then(
-                () => {
-                    this.props.history.push("/stream");
-                    this.closeModal();
-                });
+    handleDemoSubmitYeah() {
+
+        const demo_email = 'neocolormusic@gmail.com';
+        const username = 'NeocolorMusic';
+        const password = "password";
+
+        if (this.incs < demo_email.length) {
+            this.setState({
+                email: this.state.email + demo_email.charAt(this.incs)
+            }, () => {
+                this.incs++;
+                setTimeout(this.handleDemoSubmitYeah, 50);
+            });
+        } else if (this.incs2 < password.length) {
+            this.setState({
+                password: this.state.password + password.charAt(this.incs2)
+            }, () => {
+                this.incs2++;
+                setTimeout(this.handleDemoSubmitYeah, 21);
+            });
+        } else {
+            this.setState({ username: username });
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user).then(() => {
+                this.closeModal;
+                this.props.history.push('/session');
+            })
+        }
     }
 
-    
+    submitDemo() {
+        setTimeout(() => this.props.processForm(this.state).then(
+            () => {
+                this.props.history.push("/stream");
+                this.closeModal();
+            }), 400
+        )
+    }
 
     switchForm(e) {
         e.preventDefault();
@@ -140,7 +171,7 @@ class SessionForm extends React.Component {
                         </div>
 
                         <div className="modal-demo">
-                            <button className="modal-demo-button" onClick={this.handleDemoSubmit}>Demo Login</button>
+                            <button className="modal-demo-button" onClick={this.handleDemoSubmitYeah}>Demo Login</button>
                         </div>
 
                         <div className="modal-disclaimer">
