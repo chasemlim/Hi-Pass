@@ -3,6 +3,144 @@
     height: 380px;
     min-width: 1240px;
     margin: 0 auto;
-    background-image: image_url('neocolor-hctbw.jpg');
-    background-position: center;
+    background-image: linear-gradient(to bottom right, #34847C, #1E1F1C);
+}
+
+.left-listen {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 25px;
+    height: 355px;
+    width: 830px;
+    flex-direction: column;
+}
+
+.song-info {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f50;
+    display: flex;
+    margin: 0;
+}
+
+.play-button:hover {
+    background-color: #ED2303;
+    cursor: pointer;
+}
+
+.button {
+    color: #FEFFFE;
+    margin: auto;
+    font-size: 26px;
+    left: 2px;
+    position: relative;
+}
+
+.fa-pause {
+    position: relative;
+    left: 0px;
+}
+
+.artist-and-song {
+    display: flex;
+    width: 600px;
+    height: 65px;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.artist-name {
+    margin: -3px 0 3px 0;
+    width: max-content;
+    height: auto;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 1px 7px 1px 7px;
+    color: #ccc;
+    font-family: 'interstateextralight';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    float: left;
+}
+
+.artist-name:hover {
+    color: #FEFFFE;
+    cursor: pointer;
+}
+
+.song-name {
+    margin: 0;
+    width: max-content;
+    height: auto;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 2px 7px 1px 7px;
+    color: #FEFFFE;
+    font-family: 'interstateextralight';
+    font-size: 24px;
+    font-weight: 600;
+    float: left;
+    line-height: 37px;
+}
+
+.date-and-genre {
+    height: auto;
+    width: 140px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.date {
+    float: right;
+    margin: 3px 0 0 0;
+    width: auto;
+    text-align: right;
+    font-family: 'interstateextralight';
+    font-weight: 600;
+    font-size: 16px;
+    color: #DCE4E4;
+}
+
+.genre {
+    max-width: 120px;
+    width: max-content;
+    align-self: flex-end;
+    color: #DCE4D4;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'interstateextralight';
+    background-color: #989998;
+    border-radius: 15px;
+    padding: 0 7px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.genre:hover {
+    background-color: #656665;
+    cursor: pointer;
+}
+
+.waveform {
+    background-image: image_url("transparent-waveform.png");
+    min-width: 862px;
+    height: 151px;
+    margin-left: -20px;
+}
+
+.album-art {
+    height: 340px;
+    width: 340px;
+    background-image: image_url("neocolor-hctbw.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
 }
