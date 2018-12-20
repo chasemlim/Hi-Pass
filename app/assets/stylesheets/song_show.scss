@@ -147,8 +147,9 @@
 
 .show-bottom-half {
     background-color: #FEFFFE;
-    width: 100%;
+    min-width: 1240px;
     height: 100%;
+    margin: 0 auto;
 }
 
 .info-div {

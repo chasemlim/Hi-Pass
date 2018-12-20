@@ -15,6 +15,8 @@
 class Song < ApplicationRecord
     validates :title, :artist, :user_id, :genre, presence: true
 
+    has_one_attached :audio
+
     has_many :listens,
         foreign_key: :song_id,
         class_name: :Listen
