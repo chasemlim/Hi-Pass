@@ -14,9 +14,9 @@ export const receiveSong = payload => ({
     payload
 })
 
-export const removeSong = id => ({
+export const removeSong = song => ({
     type: REMOVE_SONG,
-    songId: id
+    songId: song.id
 })
 
 export const fetchSongs = () => (dispatch) => (
@@ -24,15 +24,15 @@ export const fetchSongs = () => (dispatch) => (
 )
 
 export const fetchSong = (id) => (dispatch) => (
-    SongApiUtil.fetchSong(id).then( song => dispatch(receiveSong(song)))
+    SongApiUtil.fetchSong(id).then( payload => dispatch(receiveSong(payload)))
 )
 
 export const createSong = (song) => (dispatch) => (
-    SongApiUtil.createSong(song).then( song => dispatch(receiveSong(song)))
+    SongApiUtil.createSong(song).then( payload => dispatch(receiveSong(payload)))
 )
 
 export const updateSong = (song) => (dispatch) => (
-    SongApiUtil.updateSong(song).then( song => dispatch(receiveSong(song)))
+    SongApiUtil.updateSong(song).then( payload => dispatch(receiveSong(payload)))
 )
 
 export const deleteSong = (id) => (dispatch) => (

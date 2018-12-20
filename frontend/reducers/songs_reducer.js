@@ -13,6 +13,7 @@ const songsReducer = (state = {}, action) => {
             return action.songs;
         case RECEIVE_SONG:
             newState = Object.assign({}, state, action.payload.songs)
+            return newState;
         case REMOVE_SONG:
             newState = Object.assign({}, state);
             delete newState[action.songId];

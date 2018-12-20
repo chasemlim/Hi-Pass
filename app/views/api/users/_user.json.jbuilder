@@ -4,10 +4,11 @@ json.users do
     end
 end
 
-# json.songs do
-#     user.songs.each do |song|
-#         json.set! song.id do
-#             json.partial! "api/songs/song", song: song
-#         end
-#     end
-# end
+json.songs do
+    user.songs.each do |song|
+        json.set! song.id do
+            # json.partial! "api/songs/song", song: song
+            json.extract! song, :id, :title, :artist, :genre, :description, :user_id
+        end
+    end
+end

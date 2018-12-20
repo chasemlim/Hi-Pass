@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { fetchSong, updateSong, deleteSong } from '../../actions/song_actions';
 import SongShow from './song_show';
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = (state, ownProps) => {
     return ({
-        currentUserId: state.session.currentUser
+        currentUser: state.entities.users[state.session.currentUserId],
+        song: state.entities.songs[ownProps.match.params.songId]
     })
 }
 

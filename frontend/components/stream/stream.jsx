@@ -7,7 +7,7 @@ class Stream extends React.Component {
     render() {
 
         return (
-            <div className="stream-box">
+            <div className="content">
                 <MainHeaderContainer />
             </div>
 

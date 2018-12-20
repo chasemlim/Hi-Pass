@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
 
         this.closeModal = this.closeModal.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
-        this.handleDemoSubmitYeah = this.handleDemoSubmitYeah.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
 
         this.incs = 0;
         this.incs2 = 0;
@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
                 });
     }
 
-    handleDemoSubmitYeah() {
+    handleDemoSubmit() {
 
         const demo_email = 'neocolormusic@gmail.com';
         const username = 'NeocolorMusic';
@@ -76,20 +76,20 @@ class SessionForm extends React.Component {
                 email: this.state.email + demo_email.charAt(this.incs)
             }, () => {
                 this.incs++;
-                setTimeout(this.handleDemoSubmitYeah, 50);
+                setTimeout(this.handleDemoSubmit, 50);
             });
         } else if (this.incs2 < password.length) {
             this.setState({
                 password: this.state.password + password.charAt(this.incs2)
             }, () => {
                 this.incs2++;
-                setTimeout(this.handleDemoSubmitYeah, 21);
+                setTimeout(this.handleDemoSubmit, 21);
             });
         } else {
             this.setState({ username: username });
             const user = Object.assign({}, this.state);
             this.props.processForm(user).then(() => {
-                this.closeModal;
+                this.closeModal();
                 this.props.history.push('/session');
             })
         }
@@ -171,7 +171,7 @@ class SessionForm extends React.Component {
                         </div>
 
                         <div className="modal-demo">
-                            <button className="modal-demo-button" onClick={this.handleDemoSubmitYeah}>Demo Login</button>
+                            <button className="modal-demo-button" onClick={this.handleDemoSubmit}>Demo Login</button>
                         </div>
 
                         <div className="modal-disclaimer">

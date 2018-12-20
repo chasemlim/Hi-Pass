@@ -157,6 +157,15 @@ button:hover {
     flex-direction: column;
  }
 
+ .content {
+     display: flex;
+     height: 100%;
+     min-width: 1240px;
+     flex-direction: column;
+     margin: 0 auto;
+     background-color: #F1F2F1;
+ }
+
 //  @media only screen and (max-width: 1280px) {
 //      .main-box {
 //          display: flex;

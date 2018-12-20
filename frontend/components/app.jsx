@@ -17,21 +17,22 @@ import Modal from './modal/modal';
 import SongIndexContainer from './songs/song_index_container';
 import StreamContainer from './stream/stream_container';
 import MainHeaderContainer from './main_header/main_header_container';
+import SongShowContainer from './songs/song_show_container';
 
 const App = () => (
     <main className="main-container">
         <Modal />
 
-    <NotSlashRoute path="cookies" component={ MainHeaderContainer }/>
+    {/* <NotSlashRoute path="cookies" component={ MainHeaderContainer }/> */}
 
         <div className="main-box">
             <Switch>
                 <Route path="/stream" component={ StreamContainer } />
-                <LoggedInNoRootRoute path="/" component={ WelcomePageContainer } />
-
-                <Route path="users/:username/:song_id" />
+                {/* <LoggedInNoRootRoute path="/" component={ WelcomePageContainer } /> */}
+                
+                <Route path="/songs/:songId" component={ SongShowContainer } />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
-                <Redirect to="/stream" />
+                {/* <Redirect to="/stream" /> */}
             </Switch>
         </div>
     </main>
