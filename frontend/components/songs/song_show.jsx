@@ -54,8 +54,34 @@ class SongShow extends React.Component {
                     <div className="album-art"></div>
                 </div>
 
-                <div className="info-div">
+                <div className="show-bottom-half">
+                    <div className="info-div">
+                        <div className="comment-and-buttons">
+                            <div className="comment">
+                                <div className="commenter-pic"></div>
+                                <form action="">
+                                    <input className="comment-form" type="text" placeholder="Write a comment" />
+                                </form> 
+                            </div>
 
+                            <div className="buttons">
+                                <button className="show-buttons like-b">Like</button>
+                                <button className="show-buttons repost-b">Repost</button>
+                                <button className="show-buttons share-b">Share</button>
+                                <button className="show-buttons more-b">More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="profile-div">
+                    <div className="show-profile-pic"></div>
+                    <p className="show-username">{this.props.song.artist}</p>
+                    <div className="followers-and-tracks">
+                        <p className="show-follower-count">17</p>
+                        <p className="show-tracks-count">6</p>
+                    </div>
+                    <button className="show-follow-button">Follow</button>
                 </div>
             </div>
         ) 
