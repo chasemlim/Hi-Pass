@@ -72,17 +72,25 @@ class SongShow extends React.Component {
                             </div>
                         </div>
                     </div>
+
+                    <div className="profile-and-description">
+                        <div className="profile-div">
+                            <div className="show-profile-pic"></div>
+                            <p className="show-username">{this.props.song.artist}</p>
+                            <div className="followers-and-tracks">
+                                <p className="show-follower-count">17</p>
+                                <p className="show-tracks-count">6</p>
+                            </div>
+                            <button className="show-follow-button">Follow</button>
+                        </div>
+
+                        <div className="description-div">
+                            <p>{this.props.song.description}sample text until its not null</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div className="profile-div">
-                    <div className="show-profile-pic"></div>
-                    <p className="show-username">{this.props.song.artist}</p>
-                    <div className="followers-and-tracks">
-                        <p className="show-follower-count">17</p>
-                        <p className="show-tracks-count">6</p>
-                    </div>
-                    <button className="show-follow-button">Follow</button>
-                </div>
             </div>
         ) 
     }
