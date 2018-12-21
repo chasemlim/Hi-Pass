@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_one_attached :avatar
+
     has_many :songs,
         foreign_key: :user_id,
         class_name: :Song

@@ -17,6 +17,8 @@ class Song < ApplicationRecord
 
     has_one_attached :audio
 
+    has_one_attached :album_art
+
     has_many :listens,
         foreign_key: :song_id,
         class_name: :Listen

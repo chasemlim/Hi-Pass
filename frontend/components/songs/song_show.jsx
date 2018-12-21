@@ -35,13 +35,15 @@ class SongShow extends React.Component {
 
         const audio = document.querySelector(".html__player");
 
-        if (this.props.paused === true) {
+        setTimeout(() =>
+        {if (this.props.paused === true) {
             audio.play();
             this.props.togglePlayState();
         } else {
             audio.pause();
             this.props.togglePlayState();
-        }
+        }}, 500
+        )
     }
 
     render() {
@@ -105,11 +107,6 @@ class SongShow extends React.Component {
                             <p>{this.props.song.description}sample text until its not null</p>
                         </div>
                     </div>
-
-                {/* <audio controls>
-                    <source src={this.props.song.audioURL} type="audio/mp3" />
-                </audio> */}
-
                 </div>
             </div>
         ) 
