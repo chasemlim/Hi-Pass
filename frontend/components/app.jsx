@@ -18,6 +18,7 @@ import SongIndexContainer from './songs/song_index_container';
 import StreamContainer from './stream/stream_container';
 import MainHeaderContainer from './main_header/main_header_container';
 import SongShowContainer from './songs/song_show_container';
+import PlayerContainer from './player/player_container';
 
 const App = () => (
     <main className="main-container">
@@ -28,13 +29,14 @@ const App = () => (
         <div className="main-box">
             <Switch>
                 <Route path="/stream" component={ StreamContainer } />
-                {/* <LoggedInNoRootRoute path="/" component={ WelcomePageContainer } /> */}
+                <LoggedInNoRootRoute exact path="/" component={ WelcomePageContainer } />
                 
                 <Route path="/songs/:songId" component={ SongShowContainer } />
                 {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
-                {/* <Redirect to="/stream" /> */}
+                <Redirect to="/stream" />
             </Switch>
         </div>
+        <PlayerContainer />
     </main>
 );
 

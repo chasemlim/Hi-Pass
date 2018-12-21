@@ -6,7 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.delete_all
-User.create(
+user = User.create(
     username: "NeocolorMusic", email: "neocolormusic@gmail.com", password: "password"
 )
+
+Song.delete_all
+song = Song.create(
+    title: "hctbw", artist: "Neocolor", genre: "Electronic", description: "thing", user_id: user.id
+)
+
+file = open('https://s3-us-west-1.amazonaws.com/seed-assets-aa/hctbw.mp3')
+
+song.audio.attach(io: file, filename: 'test')

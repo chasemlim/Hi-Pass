@@ -1,11 +1,13 @@
 import React from 'react';
 import MainHeaderContainer from '../main_header/main_header_container';
+import Player from '../player/player_container';
 
 class SongShow extends React.Component {
 
     constructor(props) {
         super(props);
         this.switchIcon = this.switchIcon.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -14,8 +16,7 @@ class SongShow extends React.Component {
         if(!song) this.props.fetchSong(this.props.match.params.songId);
     }
 
-    switchIcon(e) {
-        e.preventDefault();
+    switchIcon() {
         let button = document.getElementById("button");
 
         if (button.classList.contains("fa-play")) {
@@ -24,6 +25,22 @@ class SongShow extends React.Component {
         } else if (button.classList.contains("fa-pause")) {
             button.classList.remove("fa-pause");
             button.classList.add("fa-play");
+        }
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.switchIcon();
+        this.props.changeSong(this.props.song.id);
+
+        const audio = document.querySelector(".html__player");
+
+        if (this.props.paused === true) {
+            audio.play();
+            this.props.togglePlayState();
+        } else {
+            audio.pause();
+            this.props.togglePlayState();
         }
     }
 
@@ -37,7 +54,7 @@ class SongShow extends React.Component {
                 <div className="listen-div">
                     <div className="left-listen">
                         <div className="song-info">
-                            <div className="play-button" onClick={this.switchIcon}>
+                            <div className="play-button" onClick={this.handleClick}>
                                 <i id="button" className="fas fa-play button" ></i>
                             </div>
                             <div className="artist-and-song">
@@ -89,8 +106,11 @@ class SongShow extends React.Component {
                         </div>
                     </div>
 
-                </div>
+                {/* <audio controls>
+                    <source src={this.props.song.audioURL} type="audio/mp3" />
+                </audio> */}
 
+                </div>
             </div>
         ) 
     }

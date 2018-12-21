@@ -10,6 +10,7 @@ class MainHeader extends React.Component {
         this.attached = false;
         this.userAttached = false;
         this.handleLogOut = this.handleLogOut.bind(this);
+        this.handleHome = this.handleHome.bind(this);
     }
 
     loggedOutNavBar() {
@@ -19,21 +20,27 @@ class MainHeader extends React.Component {
                 <div className="header-content">
 
                 <div className="header-orange-lo">
-                    <div className="header-sc-logo-lo"></div>
-                    <p className="header-sc-text">HI-PASS</p>
+                    <a href="/#/stream">
+                        <div className="header-sc-logo-lo"></div>
+                        <p className="header-sc-text">HI-PASS</p>
+                    </a>
                 </div>
 
                 <div className="header-nav-div">
                     <ul>
                         <li>
-                            <div>
-                                <p>Home</p>
-                            </div>
+                            <a href="/#/">
+                                <div>
+                                    <p>Home</p>
+                                </div>
+                            </a> 
                         </li>
                         <li>
-                            <div>
-                                <p>Stream</p>
-                            </div>
+                            <a href="/#/stream">
+                                <div>
+                                    <p>Stream</p>
+                                </div>
+                            </a>
                         </li>
                         <li>
                             <div>
@@ -108,25 +115,36 @@ class MainHeader extends React.Component {
         this.props.logout().then(() => this.props.history.push('/'));
     }
 
+    handleHome(e) {
+        e.preventDefault();
+        this.props.history.push('/stream');
+    }
+
     loggedInNavBar() {
         return (
             <div className="main-header">
                 <div className="header-content">
-                    <div className="header-orange">
-                        <div className="header-sc-logo"></div>
-                    </div>
+                    <a href="/#/stream">
+                        <div className="header-orange">
+                            <div className="header-sc-logo"></div>
+                        </div>
+                    </a>
 
                     <div className="header-nav-div">
                         <ul>
                             <li>
-                                <div>
-                                    <p>Home</p>
-                                </div>
+                                <a href="/#/">
+                                    <div>
+                                        <p>Home</p>
+                                    </div>
+                                </a> 
                             </li>
                             <li>
-                                <div>
-                                    <p>Stream</p>
-                                </div>
+                                <a href="/#/stream">
+                                    <div>
+                                        <p>Stream</p>
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <div>
