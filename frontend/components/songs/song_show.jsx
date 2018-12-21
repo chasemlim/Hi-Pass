@@ -13,7 +13,7 @@ class SongShow extends React.Component {
     componentDidMount() {
         const { song } = this.props;
 
-        if(!song) this.props.fetchSong(this.props.match.params.songId);
+        this.props.fetchSong(this.props.match.params.songId);
     }
 
     switchIcon() {
@@ -47,8 +47,8 @@ class SongShow extends React.Component {
     }
 
     render() {
-        if (!this.props.song) return <div></div>; 
-        // if (!this.props.songUploader) return <div></div>; 
+        if (!this.props.song) return null; 
+        if (!this.props.songUploader) return null; 
 
         return (
             <div className="content">

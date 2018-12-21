@@ -5,7 +5,6 @@ import SongShow from './song_show';
 import { changeSong, togglePlayState } from '../../actions/player_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     let songUploader;
     if (state.entities.songs[ownProps.match.params.songId] !== undefined) {
         songUploader = state.entities.users[state.entities.songs[ownProps.match.params.songId].user_id];
