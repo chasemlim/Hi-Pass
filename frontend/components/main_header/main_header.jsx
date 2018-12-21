@@ -18,13 +18,13 @@ class MainHeader extends React.Component {
             <div className="main-header">
 
                 <div className="header-content">
-
-                <div className="header-orange-lo">
-                    <a href="/#/stream">
+                
+                <a href="/#/stream">
+                    <div className="header-orange-lo">              
                         <div className="header-sc-logo-lo"></div>
                         <p className="header-sc-text">HI-PASS</p>
-                    </a>
-                </div>
+                    </div>
+                </a>
 
                 <div className="header-nav-div">
                     <ul>

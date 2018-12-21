@@ -104,7 +104,7 @@ class SongShow extends React.Component {
                         </div>
 
                         <div className="description-div">
-                            <p>{this.props.song.description}sample text until its not null</p>
+                            <p>{this.props.song.description}</p>
                         </div>
                     </div>
                 </div>

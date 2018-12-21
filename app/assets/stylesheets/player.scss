@@ -54,9 +54,9 @@
     height: 2px;
     margin: auto;
     background-color: #ccc;
-    position: absolute;
-    top: 23px;
-    left: 368px;
+    position: relative;
+    top: -1px;
+    left: 35px;
 }
 
 .progress__filled {
@@ -68,9 +68,9 @@
 }
 
 .time__passed {
-    position: absolute;
-    top: 1px;
-    left: 333px;
+    position: relative;
+    top: -17px;
+    left: 59px;
     height: 14px;
     width: 20px;
     font-size: 11px;
@@ -81,9 +81,9 @@
 }
 
 .total__time {
-    position: absolute;
-    top: 1px;
-    right: 465px;
+    position: relative;
+    top: -17px;
+    right: -3px;
     height: 14px;
     width: 20px;
     font-size: 11px;
