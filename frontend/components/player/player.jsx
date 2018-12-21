@@ -56,9 +56,6 @@ class Player extends React.Component {
 
     render() {
         // if (this.props.song === undefined) return null;
-
-        console.log(this.props.paused);
-        console.log(this.props.song);
         
         let playOrPause = this.props.paused ? (
             <i className="fa fa-play player-play" />

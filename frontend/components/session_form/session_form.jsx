@@ -18,7 +18,6 @@ class SessionForm extends React.Component {
     }
 
     // componentDidUpdate() {
-    //     debugger
     //     if (this.props.currentUserId) {
     //         this.props.history.push("/stream");
     //     }
@@ -31,7 +30,6 @@ class SessionForm extends React.Component {
     }
 
     updateEmail(e) {
-        debugger;
         e.preventDefault();
         let email = e.target.value
         let username = this.isolateUsername(email);
