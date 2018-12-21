@@ -5,6 +5,8 @@ class SongGrid extends React.Component {
 
     render() {
         
+        if (this.props.songs.length === 0) return <div></div>;
+
         return (
             <ul className="grid-ul">
                 { Object.values(this.props.songs).map( (song) => {

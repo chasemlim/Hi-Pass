@@ -47,8 +47,8 @@ class SongShow extends React.Component {
     }
 
     render() {
-
         if (!this.props.song) return <div></div>; 
+        // if (!this.props.songUploader) return <div></div>; 
 
         return (
             <div className="content">
@@ -70,7 +70,7 @@ class SongShow extends React.Component {
                         </div>
                         <div className="waveform"></div>
                     </div>
-                    <div className="album-art"></div>
+                    <div className="album-art" style={{ backgroundImage: `url("${this.props.song.album_art}")`}}></div>
                 </div>
 
                 <div className="show-bottom-half">
@@ -94,7 +94,7 @@ class SongShow extends React.Component {
 
                     <div className="profile-and-description">
                         <div className="profile-div">
-                            <div className="show-profile-pic"></div>
+                            <div className="show-profile-pic" style={{ backgroundImage: `url("${this.props.songUploader.avatar}")` }}></div>
                             <p className="show-username">{this.props.song.artist}</p>
                             <div className="followers-and-tracks">
                                 <p className="show-follower-count">17</p>

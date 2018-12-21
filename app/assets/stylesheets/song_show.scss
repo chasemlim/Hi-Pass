@@ -295,9 +295,9 @@
     flex-direction: column;
 }
 .show-profile-pic {
-    background-image: image_url("sample-profile-pic.jpg");
+    // background-image: image_url("sample-profile-pic.jpg");
     background-position: center;
-    background-size: 120px 120px;
+    background-size: cover;
     width: 120px;
     height: 120px;
     border-radius: 50%;

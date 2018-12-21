@@ -8,7 +8,6 @@ class WelcomePage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { songs: {} }
     }
 
     componentWillMount() {
@@ -39,7 +38,7 @@ class WelcomePage extends React.Component {
                     </div>
 
                     <div className="song-grid">
-                        <SongGrid songs={this.state.songs} />
+                        <SongGrid songs={this.props.songs} />
                     </div>
 
                     <div className="explore-trending">

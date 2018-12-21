@@ -5,6 +5,16 @@ json.songs do
     # json.listens @song.listens.pluck(:id).count
 end
 
+user = User.find(@song.user_id)
+
+json.users do
+    json.set! user.id do
+        json.extract! user, :id, :username
+        json.avatar url_for(user.avatar)
+    end
+end
+
+
 # json.comments do
 #     @song.comments.each do |comment|
 #         json.set! comment.id do
