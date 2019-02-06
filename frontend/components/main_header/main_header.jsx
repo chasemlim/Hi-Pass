@@ -164,8 +164,6 @@ class MainHeader extends React.Component {
                     <div className="pro-and-upload">
                         <div className="pro-upload-div pro">
                             <p className="header-pro-upload-text">Try Pro</p>
-
-                            <span className="coming-soon-text">Coming soon!</span>
                         </div>
 
                         <div className="pro-upload-div">

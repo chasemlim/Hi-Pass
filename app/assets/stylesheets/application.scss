@@ -114,6 +114,22 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lucida_granderegular';
+    src: url('lucidagrande-webfont.woff2') format('woff2'),
+        url('lucidagrande-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lucida_grandebold';
+    src: url('lucidagrandebold-webfont.woff2') format('woff2'),
+        url('lucidagrandebold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     height: 100%;
 }
