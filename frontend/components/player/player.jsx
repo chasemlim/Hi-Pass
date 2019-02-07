@@ -10,7 +10,8 @@ class Player extends React.Component {
         this.state = {
             song: this.props.song,
             paused: this.props.paused,
-            progress: ""
+            volume: 0.75,
+            mute: false
         }
         this.togglePlayPause = this.togglePlayPause.bind(this);
     }
@@ -29,9 +30,6 @@ class Player extends React.Component {
         const percent = audio.currentTime / audio.duration * 100;
         progressBall.style.left = `${percent}%`;
         progressBar.style.width = `${percent}%`;
-
-
-        this.setState({ progress: `${percent}%` }); // extra
     }
 
     updateDuration() {
@@ -78,6 +76,21 @@ class Player extends React.Component {
         audio.currentTime = duration * newPercent;
     }
 
+    toggleMute() {
+        const audio = document.querySelector(".html__player");
+        const volIcon = document.querySelector(".volume__icon");
+
+        if (this.state.mute) {
+            this.setState({ mute: false });
+            audio.volume = this.state.volume;
+        } else {
+            this.setState({ mute: true });
+            audio.volume = 0;
+        }
+        volIcon.classList.toggle('fa-volume-up');
+        volIcon.classList.toggle('fa-volume-mute');
+    }
+
     render() {
         // if (this.props.song === undefined) return null;
         
@@ -94,33 +107,40 @@ class Player extends React.Component {
         let audioSource = this.props.song ? song.audioURL : undefined;
 
         return (
-            <div className="player">
-                <div className="player-div">
-                    <audio className="html__player" src={audioSource} />
+          <div className="player">
+            <div className="player-div">
+              <audio className="html__player" src={audioSource} />
 
-                    <div className="player__controls">
-                        <div className="play__button">
-                            <button className="play__pause" onClick={this.togglePlayPause}>
-                                {playOrPause}
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="progress__container">
-                        <span className="time__passed">0:00</span>
-                        <div className="progress" onClick={this.seek.bind(this)}>
-                            <div className="progress__filled" />
-                            <div className="progress__ball" />
-                        </div>
-                        <span className="total__time">0:00</span>
-                    </div>
-
-                    <div className="">
-
-                    </div>
+              <div className="player__controls">
+                <div className="play__button">
+                  <button
+                    className="play__pause"
+                    onClick={this.togglePlayPause}
+                  >
+                    {playOrPause}
+                  </button>
                 </div>
+              </div>
+
+              <div className="progress__container">
+                <span className="time__passed">0:00</span>
+                <div
+                  className="progress"
+                  onClick={this.seek.bind(this)}
+                >
+                  <div className="progress__filled" />
+                  <div className="progress__ball" />
+                </div>
+                <span className="total__time">0:00</span>
+              </div>
+
+              <div className="volume__container">
+                <i class="fas fa-volume-up volume__icon" onClick={this.toggleMute.bind(this)}/>
+                <input type="range" />
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 
