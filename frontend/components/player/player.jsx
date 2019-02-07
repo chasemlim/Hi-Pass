@@ -81,21 +81,68 @@ class Player extends React.Component {
     toggleMute() {
         const audio = document.querySelector(".html__player");
         const volIcon = document.querySelector(".volume__icon");
+        const volumeFill = document.querySelector(".volume__filled");
+        let percent = 0;
 
         if (this.state.mute) {
             this.setState({ mute: false });
             audio.volume = this.state.volume;
+
+            if (this.state.volume < 0.3) {
+                percent = this.state.volume * 100;
+            } else if (this.state.volume < 0.5) {
+                percent = this.state.volume * 100 - 5;
+            } else if (this.state.volume < 0.7) {
+                percent = this.state.volume * 100 - 10;
+            } else {
+                percent = this.state.volume * 100 - 15;
+            }
+
+            volumeFill.style.width = `${percent}%`;
+
+            if (this.state.mute || percent <= 0.01) {
+                volIcon.classList.remove('fa-volume-up');
+                volIcon.classList.add('fa-volume-mute');
+            }
+
+            if (this.state.volume <= 0.48 && this.state.volume >= 0.01) {
+                if (volIcon.classList.contains("fa-volume-mute")) {
+                    volIcon.classList.remove("fa-volume-mute");
+                    volIcon.classList.add("fa-volume-down");
+                } else {
+                    volIcon.classList.remove("fa-volume-up");
+                    volIcon.classList.add("fa-volume-down");
+                }
+            } else if (this.state.volume > 0.48) {
+                if (volIcon.classList.contains("fa-volume-mute")) {
+                    volIcon.classList.remove("fa-volume-mute");
+                    volIcon.classList.add("fa-volume-up");
+                } else {
+                    volIcon.classList.remove("fa-volume-down");
+                    volIcon.classList.add("fa-volume-up");
+                }
+            }
         } else {
             this.setState({ mute: true });
             audio.volume = 0;
+            volumeFill.style.width = '0%';
+
+            if (volIcon.classList.contains('fa-volume-up')) {
+                volIcon.classList.remove("fa-volume-up");
+            }
+
+            if (volIcon.classList.contains('fa-volume-down')) {
+                volIcon.classList.remove("fa-volume-down");
+            }
+
+            volIcon.classList.add("fa-volume-mute");
         }
-        volIcon.classList.toggle('fa-volume-up');
-        volIcon.classList.toggle('fa-volume-mute');
     }
 
     handleVolume(e) {
         const audio = document.querySelector(".html__player");
         const volumeFill = document.querySelector(".volume__filled");
+        const volIcon = document.querySelector(".volume__icon");
         let percent = 0;
         const volume = e.currentTarget.value;
         audio.volume = volume;
@@ -112,10 +159,27 @@ class Player extends React.Component {
 
         volumeFill.style.width = `${percent}%`;
 
-        if (this.state.mute || volume === 0.01) {
-            const volIcon = document.querySelector(".volume__icon");
-            volIcon.classList.toggle('fa-volume-up');
-            volIcon.classList.toggle('fa-volume-mute');
+        if (this.state.mute || percent <= 0.01) {
+            volIcon.classList.remove('fa-volume-up');
+            volIcon.classList.add('fa-volume-mute');
+        } 
+        
+        if (volume <= 0.48 && volume >= 0.01) {
+            if (volIcon.classList.contains("fa-volume-mute")) {
+              volIcon.classList.remove("fa-volume-mute");
+              volIcon.classList.add("fa-volume-down");
+            } else {
+              volIcon.classList.remove("fa-volume-up");
+              volIcon.classList.add("fa-volume-down");
+            }
+        } else if (volume > 0.48) {
+            if (volIcon.classList.contains("fa-volume-mute")) {
+                volIcon.classList.remove("fa-volume-mute");
+                volIcon.classList.add("fa-volume-up");
+            } else {
+                volIcon.classList.remove("fa-volume-down");
+                volIcon.classList.add("fa-volume-up");
+            }
         }
 
         this.setState({ mute: false, volume: volume });

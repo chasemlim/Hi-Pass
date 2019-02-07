@@ -67,6 +67,7 @@
 
 .progress__filled {
     min-width: 0px;
+    width: 0;
     height: 2px;
     background-color: #f50;
 
@@ -143,7 +144,7 @@
     border: 1px solid #cecece;
     border-radius: 5px;
     display: flex;
-    transition: 0.3s;
+    transition: 0.4s;
 
     input {
         margin: auto;
