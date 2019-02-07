@@ -18,8 +18,10 @@ class Player extends React.Component {
 
     componentDidMount() {
         const audio = document.querySelector(".html__player");
+        const volumeFilled = document.querySelector(".volume__filled");
         audio.addEventListener("timeupdate", this.handleProgress.bind(this));
         audio.addEventListener("timeupdate", this.updateDuration.bind(this));
+        // volumeFilled.addEventListener("volumechange", this.handleVolumeProgress.bind(this));
     }
 
     handleProgress() {
@@ -93,11 +95,24 @@ class Player extends React.Component {
 
     handleVolume(e) {
         const audio = document.querySelector(".html__player");
+        const volumeFill = document.querySelector(".volume__filled");
+        let percent = 0;
         const volume = e.currentTarget.value;
-
         audio.volume = volume;
 
-        if (this.state.mute) {
+        if (volume < 0.3) {
+            percent = volume * 100;
+        } else if (volume < 0.5) {
+            percent = volume * 100 - 5;
+        } else if (volume < 0.7) {
+            percent = volume * 100 - 10;
+        } else {
+            percent = volume * 100 - 15;
+        }
+
+        volumeFill.style.width = `${percent}%`;
+
+        if (this.state.mute || volume === 0.01) {
             const volIcon = document.querySelector(".volume__icon");
             volIcon.classList.toggle('fa-volume-up');
             volIcon.classList.toggle('fa-volume-mute');
@@ -152,6 +167,7 @@ class Player extends React.Component {
               <div className="volume__container">
                 <i className="fas fa-volume-up volume__icon" onClick={this.toggleMute.bind(this)}/>
                 <div className="volume__wrapper">
+                    <div className="volume__filled" />
                     <input type="range" min="0.0" max="1.0" onChange={this.handleVolume.bind(this)} value={this.state.mute ? 0 : this.state.volume} step="any" />
                 </div>
               </div>
