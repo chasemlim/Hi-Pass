@@ -9,7 +9,8 @@ class Player extends React.Component {
         super(props);
         this.state = {
             song: this.props.song,
-            paused: this.props.paused
+            paused: this.props.paused,
+            progress: ""
         }
         this.togglePlayPause = this.togglePlayPause.bind(this);
     }
@@ -23,9 +24,14 @@ class Player extends React.Component {
     handleProgress() {
         const audio = document.querySelector(".html__player");
         const progressBar = document.querySelector(".progress__filled");
+        const progressBall = document.querySelector(".progress__ball");
 
         const percent = audio.currentTime / audio.duration * 100;
+        progressBall.style.left = `${percent}%`;
         progressBar.style.width = `${percent}%`;
+
+
+        this.setState({ progress: `${percent}%` }); // extra
     }
 
     updateDuration() {
@@ -104,6 +110,7 @@ class Player extends React.Component {
                         <span className="time__passed">0:00</span>
                         <div className="progress" onClick={this.seek.bind(this)}>
                             <div className="progress__filled" />
+                            <div className="progress__ball" />
                         </div>
                         <span className="total__time">0:00</span>
                     </div>
