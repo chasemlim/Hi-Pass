@@ -54,6 +54,24 @@ class Player extends React.Component {
         }
     }
 
+    seek(e) {
+        const audio = document.querySelector(".html__player");
+        const duration = audio.duration;
+
+        let el = e.currentTarget;
+        let offsetX = 0;
+        let mouseX;
+
+        while (el.offsetParent) {
+            offsetX += el.offsetLeft;
+            el = el.offsetParent;
+        }
+
+        mouseX = e.pageX - offsetX;
+        const newPercent = mouseX / e.currentTarget.offsetWidth;
+        audio.currentTime = duration * newPercent;
+    }
+
     render() {
         // if (this.props.song === undefined) return null;
         
@@ -84,10 +102,14 @@ class Player extends React.Component {
 
                     <div className="progress__container">
                         <span className="time__passed">0:00</span>
-                        <div className="progress">
+                        <div className="progress" onClick={this.seek.bind(this)}>
                             <div className="progress__filled" />
                         </div>
                         <span className="total__time">0:00</span>
+                    </div>
+
+                    <div className="">
+
                     </div>
                 </div>
             </div>

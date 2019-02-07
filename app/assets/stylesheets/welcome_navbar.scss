@@ -106,6 +106,10 @@
         border: 1px solid #CBCCCB;
         border-style: solid;
         color: white;
+
+        &:hover {
+            border-color: #e5e5e5;
+        }
     }
 
     .create-account {
