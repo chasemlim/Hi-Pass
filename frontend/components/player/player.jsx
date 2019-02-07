@@ -91,6 +91,21 @@ class Player extends React.Component {
         volIcon.classList.toggle('fa-volume-mute');
     }
 
+    handleVolume(e) {
+        const audio = document.querySelector(".html__player");
+        const volume = e.currentTarget.value;
+
+        audio.volume = volume;
+
+        if (this.state.mute) {
+            const volIcon = document.querySelector(".volume__icon");
+            volIcon.classList.toggle('fa-volume-up');
+            volIcon.classList.toggle('fa-volume-mute');
+        }
+
+        this.setState({ mute: false, volume: volume });
+    }
+
     render() {
         // if (this.props.song === undefined) return null;
         
@@ -135,8 +150,10 @@ class Player extends React.Component {
               </div>
 
               <div className="volume__container">
-                <i class="fas fa-volume-up volume__icon" onClick={this.toggleMute.bind(this)}/>
-                <input type="range" />
+                <i className="fas fa-volume-up volume__icon" onClick={this.toggleMute.bind(this)}/>
+                <div className="volume__wrapper">
+                    <input type="range" min="0.0" max="1.0" onChange={this.handleVolume.bind(this)} value={this.state.mute ? 0 : this.state.volume} step="any" />
+                </div>
               </div>
             </div>
           </div>

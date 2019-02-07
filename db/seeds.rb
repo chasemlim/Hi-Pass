@@ -99,7 +99,7 @@ s2.album_art.attach(io: a2, filename: 'travellers.jpg')
 s2.save!
 
 s3 = Song.create(
-    title: "The Thrill (Porter Robinson Remix)", artist: "Nero", genre: "Electronic", description: "Porter Robinson's emotional take on Nero's hit song, The Thrill.", user_id: porter.id
+    title: "The Thrill (Porter Robinson Remix)", artist: "Porter Robinson", genre: "Electronic", description: "Porter Robinson's emotional take on Nero's hit song, The Thrill.", user_id: porter.id
 )
 
 f3 = open('https://s3-us-west-1.amazonaws.com/seed-assets-aa/the-thrill.m4a')
