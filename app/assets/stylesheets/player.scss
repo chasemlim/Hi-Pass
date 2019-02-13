@@ -249,3 +249,19 @@ input[type=range]::-ms-fill-upper {
     background: #ccc;
     border-radius: 2.6px;
 }
+
+
+.player-song-info {
+    width: 288px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    margin: auto 0 auto 23px;
+}
+
+.mini-album-art {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
