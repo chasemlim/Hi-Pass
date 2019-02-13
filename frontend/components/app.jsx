@@ -14,7 +14,7 @@ import { LoggedInNoRootRoute, NotSlashRoute } from '../util/route_util';
 
 import WelcomePageContainer from './welcome_page/welcome_page_container';
 import Modal from './modal/modal';
-import SongIndexContainer from './songs/song_index_container';
+import SongGridIndexContainer from './songs/song_grid_index_container';
 import StreamContainer from './stream/stream_container';
 import MainHeaderContainer from './main_header/main_header_container';
 import SongShowContainer from './songs/song_show_container';
@@ -32,7 +32,7 @@ const App = () => (
                 <LoggedInNoRootRoute exact path="/" component={ WelcomePageContainer } />
                 
                 <Route path="/songs/:songId" component={ SongShowContainer } />
-                {/* <Route exact path = "/" component={ SongIndexContainer } /> */}
+                {/* <Route exact path = "/" component={ SongGridIndexContainer } /> */}
                 <Redirect to="/stream" />
             </Switch>
         </div>

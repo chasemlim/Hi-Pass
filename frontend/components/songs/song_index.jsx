@@ -1,5 +1,4 @@
 import React from 'react';
-import SongGrid from './song_grid';
 
 class SongIndex extends React.Component {
 
@@ -9,15 +8,17 @@ class SongIndex extends React.Component {
     }
 
     componentWillMount() {
-        this.props.fetchSongs().then( result => { this.setState({ songs: result.songs }) })
+        this.props.fetchSongs().then( result => { this.setState({ songs: result.songs }) });
     }
 
     render() {
-        return (
-            <ul>
-                <SongGrid songs={this.state.songs} />
-            </ul>
-        );
+        return(
+            <div className="main-box">
+                <div className="stream-content">
+                    <p className="stream-header">Hear the latest posts from the people you're following:</p>
+                </div>
+            </div>
+        )
     }
 }
 

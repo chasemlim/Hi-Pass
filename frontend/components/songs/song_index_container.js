@@ -17,6 +17,6 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         fetchSongs: () => dispatch(fetchSongs())
     })
-} 
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongIndex);
