@@ -58,6 +58,8 @@ class Player extends React.Component {
             audio.pause();
             this.props.togglePlayState();
         }
+        console.log(this.props.song);
+        
     }
 
     seek(e) {
@@ -235,16 +237,19 @@ class Player extends React.Component {
                     <input type="range" min="0.0" max="1.0" onChange={this.handleVolume.bind(this)} value={this.state.mute ? 0 : this.state.volume} step="any" />
                 </div>
               </div>
-
-              <div className="player-song-info">
-                {() => {
-                    if (this.props.song) {
-                        return(
-                            <div className="mini-album-art" style={`background-image: ${this.props.song.album_art}`}/>
-                        )
-                    }
-                }}
-              </div>
+                {   this.props.song
+                            ? <div className="player-song-info">
+                                <a href={'#/songs/' + this.props.song.id} className="mini-art-link">
+                                    <div className="mini-album-art" style={{ backgroundImage: `url('${this.props.song.album_art}')` }} />
+                                </a>
+                                <div className="player-title-artist">
+                                    <p className="pta-artist">{this.props.song.artist}</p>
+                                <a href={'#/songs/' + this.props.song.id}><p className="pta-title">{this.props.song.title}</p></a>
+                                </div>
+                              </div>
+                              
+                    : null
+                }
             </div>
           </div>
         );

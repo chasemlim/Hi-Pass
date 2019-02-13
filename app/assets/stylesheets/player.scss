@@ -260,8 +260,53 @@ input[type=range]::-ms-fill-upper {
 }
 
 .mini-album-art {
-    margin: auto;
+    margin: auto 0 auto 0;
     width: 30px;
     height: 30px;
     background-size: cover;
+}
+
+.mini-art-link {
+    margin: auto;
+}
+
+.player-title-artist {
+    width: 258px;
+    height: 34px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'interstateextralight';
+
+    .pta-artist {
+        color: #999;
+        font-size: 11.5px;
+        font-weight: 600;
+        height: 17px;
+        width: 248px;
+        margin: auto 0 auto 10px;
+        text-align: left;
+        text-overflow: ellipsis;
+
+        &:hover{
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+    .pta-title {
+        color: #666;
+        font-size: 11.5px;
+        font-weight: 600;
+        height: 17px;
+        width: 248px;
+        margin: auto 0 auto 10px;
+        text-align: left;
+        text-overflow: ellipsis;
+
+        &:hover {
+            color: #000;
+            cursor: pointer;
+        }
+    }
 }
