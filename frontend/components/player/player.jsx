@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 
@@ -239,12 +240,16 @@ class Player extends React.Component {
               </div>
                 {   this.props.song
                             ? <div className="player-song-info">
-                                <a href={'#/songs/' + this.props.song.id} className="mini-art-link">
+                                <Link className="mini-art-link" to={`/songs/${this.props.song.id}`}>
                                     <div className="mini-album-art" style={{ backgroundImage: `url('${this.props.song.album_art}')` }} />
-                                </a>
+                                </Link>
+
                                 <div className="player-title-artist">
                                     <p className="pta-artist">{this.props.song.artist}</p>
-                                <a href={'#/songs/' + this.props.song.id}><p className="pta-title">{this.props.song.title}</p></a>
+                                
+                                    <Link to={`/songs/${this.props.song.id}`}>
+                                        <p className="pta-title">{this.props.song.title}</p>
+                                    </Link>
                                 </div>
                               </div>
                               

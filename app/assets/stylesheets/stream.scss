@@ -1,5 +1,66 @@
 .stream-content {
     width: 879px;
     border-right: 1px solid #f2f2f2;
-    padding: 30px 30px 0 0;
+    padding: 30px 30px 0 30px;
+}
+
+.stream-header {
+    margin: 0;
+    text-align: left;
+    font-family: 'interstateextralight';
+    color: #999;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.stream-song {
+    width: 819px;
+    height: 168px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+
+    .stream-aa-link {
+        height: 160px;
+        width: 160px;
+        margin: 0 15px auto 0;
+    }
+
+    .stream-album-art {
+        width: 160px;
+        height: 160px;
+        margin: auto 0 auto auto;
+
+        img {
+            width: 160px;
+            height: 160px;
+        }
+    }
+
+    .stream-song-details {
+        width: 644px;
+        height: 168px;
+        outline: 1px solid red;
+
+        .ssd-header {
+            width: 644px;
+            height: 50px;
+            outline: 1px solid red;
+            margin-bottom: 6px;
+            padding-top: 7px;
+
+            .stream-play-button {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: #f50;
+                display: flex;
+
+                .stream-button {
+
+                }
+            }
+        }
+    }
 }
