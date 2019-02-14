@@ -5,7 +5,7 @@
 }
 
 .stream-header {
-    margin: 0;
+    margin: 0 0 50px 0;
     text-align: left;
     font-family: 'interstateextralight';
     color: #999;
@@ -19,7 +19,7 @@
     height: 168px;
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-bottom: 50px;
 
     .stream-aa-link {
         height: 160px;
@@ -84,7 +84,7 @@
 
                 .ssd-title {
                     font-family: 'interstateextralight';
-                    font-size: 14px;
+                    font-size: 15px;
                     margin-top: -1px;
                     text-align: left;
                     float: left;
@@ -142,6 +142,122 @@
             height: 66px;
             background-image: url('samplewaveform.png');
             background-size: cover;
+        }
+
+        .ssd-buttons {
+            width: 644px;
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 22px;
+            justify-content: space-between;
+
+            .ssd-buttons-div {
+                width: 400px;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .ssd-show-buttons {
+                display: flex;
+                flex-direction: row;
+                margin-right: 5px;
+                width: max-content;
+                background-color: transparent;
+                font-family: 'interstateextralight';
+                font-weight: 600;
+                font-size: 11px;
+                line-height: 16px;
+                border: 1px solid #e5e5e5;
+                border-radius: 3px;
+                padding: 2px 9px 2px 8px;
+                height: 22px;
+                cursor: pointer;
+                text-align: center;
+            }
+
+            .ssd-show-buttons:hover {
+                border: 1px solid #CBCCCB;
+            }
+
+            .ssd-like-b::before {
+                content: "";
+                display: flex;
+                background-image: image_url("heart.svg");
+                background-size: 16px 16px;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 20px;
+                width: 20px;
+                margin: -1px 3px auto -5px;
+            }
+
+            .ssd-repost-b::before {
+                content: "";
+                display: flex;
+                background-image: image_url("repost.svg");
+                background-size: 16px 16px;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 20px;
+                width: 20px;
+                margin: -1px 3px auto -5px;
+            }
+
+            .ssd-share-b::before {
+                content: "";
+                display: flex;
+                background-image: image_url("share.svg");
+                background-size: 16px 16px;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 20px;
+                width: 20px;
+                margin: -1px 3px auto -5px;
+            }
+
+            .ssd-more-b::before {
+                content: "";
+                display: flex;
+                background-image: image_url("more.svg");
+                background-size: 16px 16px;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 20px;
+                width: 20px;
+                margin: -1px 3px auto -5px;
+            }
+
+            .ssd-playcount {
+                width: 40px;
+                height: 22px;
+                display: flex;
+                flex-direction: row-reverse;
+
+                .playcount {
+                    color: #999;
+                    font-family: 'interstateextralight';
+                    font-size: 11px;
+                    line-height: 12px;
+                    width: 40px;
+                    height: 14px;
+                    margin: auto 0;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 16px;
+                        height: 12px;
+                        background-size: 16px 16px;
+                        background-image: url('playbutton.svg');
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        margin-right: 2px;
+                    }
+                }
+            }
         }
     }
 }

@@ -89,6 +89,19 @@ class SongIndex extends React.Component {
                                             </div>
 
                                             <div className="sample-waveform" />
+
+                                            <div className="ssd-buttons">
+                                                <div className="ssd-buttons-div">
+                                                    <button className="ssd-show-buttons ssd-like-b">0</button>
+                                                    <button className="ssd-show-buttons ssd-repost-b">0</button>
+                                                    <button className="ssd-show-buttons ssd-share-b">Share</button>
+                                                    <button className="ssd-show-buttons ssd-more-b">More</button>
+                                                </div>
+                                                
+                                                <div className="ssd-playcount">
+                                                    <span className="playcount">0</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </li>
                                 )
