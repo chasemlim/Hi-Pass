@@ -31,6 +31,7 @@ class SongIndex extends React.Component {
             e.preventDefault();
             this.switchIcon();
             this.props.changeSong(id);
+            this.props.fetchSong(id);
 
             const audio = document.querySelector(".html__player");
 
@@ -67,9 +68,20 @@ class SongIndex extends React.Component {
                                         <div className="stream-song-details">
                                             <div className="ssd-header">
                                                 <div className="stream-play-button" onClick={this.handleClick(song.id)}>
-                                                    <i id="button" className="fas fa-play stream-button" ></i>
+                                                    <i id="button" className="fas fa-play stream-button"></i>
+                                                </div>
+
+                                                <div className="ssd-text">
+                                                    <p className="ssd-artist">{song.artist}</p>
+                                                    <p className="ssd-title">{song.title}</p>
+                                                </div>
+
+                                                <div className="ssd-tag">
+                                                    <p className="ssd-genre"># {song.genre}</p>
                                                 </div>
                                             </div>
+
+
                                         </div>
                                     </li>
                                 )

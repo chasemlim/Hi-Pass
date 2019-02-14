@@ -49,6 +49,8 @@
             outline: 1px solid red;
             margin-bottom: 6px;
             padding-top: 7px;
+            display: flex;
+            flex-direction: row;
 
             .stream-play-button {
                 width: 36px;
@@ -69,6 +71,53 @@
                     position: relative;
                     left: 2px;
                 }
+
+                .fa-pause {
+                    position: relative;
+                    left: 0px;
+                }
+            }
+
+            .ssd-text {
+                display: flex;
+                flex-direction: column;
+                height: 36px;
+                width: 503px;
+                margin: 0 0 auto 5px;
+
+                .ssd-title {
+                    font-family: 'interstateextralight';
+                    font-size: 14px;
+                    margin-top: -1px;
+                    text-align: left;
+                    float: left;
+                    color: #333;
+                    
+                    &:hover {
+                        color: #000;
+                        cursor: pointer;
+                    }
+                }
+
+                .ssd-artist {
+                    font-family: 'interstateextralight';
+                    font-size: 12px;
+                    margin: 0;
+                    text-align: left;
+                    float: left;
+                    color: #999;
+
+                    &:hover {
+                        color: #333;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .ssd-tag {
+                width: 77px;
+                height: 20px;
+                margin-left: 5px;
             }
         }
     }
