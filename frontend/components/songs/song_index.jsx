@@ -6,10 +6,45 @@ class SongIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = { songs: {} }
+        this.switchIcon = this.switchIcon.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentWillMount() {
         this.props.fetchSongs().then( result => { this.setState({ songs: result.songs }) });
+    }
+
+    switchIcon() {
+        let button = document.getElementById("button");
+
+        if (button.classList.contains("fa-play")) {
+            button.classList.remove("fa-play");
+            button.classList.add("fa-pause")
+        } else if (button.classList.contains("fa-pause")) {
+            button.classList.remove("fa-pause");
+            button.classList.add("fa-play");
+        }
+    }
+
+    handleClick(id) {
+        return((e) => {
+            e.preventDefault();
+            this.switchIcon();
+            this.props.changeSong(id);
+
+            const audio = document.querySelector(".html__player");
+
+            setTimeout(() => {
+                if (this.props.paused === true) {
+                    audio.play();
+                    this.props.togglePlayState();
+                } else {
+                    audio.pause();
+                    this.props.togglePlayState();
+                }
+            }, 500
+            )
+        })
     }
 
     render() {
@@ -31,7 +66,7 @@ class SongIndex extends React.Component {
                                         
                                         <div className="stream-song-details">
                                             <div className="ssd-header">
-                                                <div className="stream-play-button" onClick={this.handleClick}>
+                                                <div className="stream-play-button" onClick={this.handleClick(song.id)}>
                                                     <i id="button" className="fas fa-play stream-button" ></i>
                                                 </div>
                                             </div>

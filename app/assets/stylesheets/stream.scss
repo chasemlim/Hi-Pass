@@ -57,8 +57,17 @@
                 background-color: #f50;
                 display: flex;
 
-                .stream-button {
+                &:hover {
+                    background-color: #ED2303;
+                    cursor: pointer;
+                }
 
+                .stream-button {
+                    color: #FEFFFE;
+                    margin: auto;
+                    font-size: 14px;
+                    position: relative;
+                    left: 2px;
                 }
             }
         }
