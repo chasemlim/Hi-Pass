@@ -27,6 +27,8 @@ class SongIndex extends React.Component {
     }
 
     handleClick(id) {
+        console.log(this.state);
+        
         return((e) => {
             e.preventDefault();
             this.switchIcon();
@@ -72,8 +74,13 @@ class SongIndex extends React.Component {
                                                 </div>
 
                                                 <div className="ssd-text">
-                                                    <p className="ssd-artist">{song.artist}</p>
-                                                    <p className="ssd-title">{song.title}</p>
+                                                    <Link to="#">
+                                                        <p className="ssd-artist">{song.artist}</p>
+                                                    </Link>
+                                                    <Link to={`/songs/${song.id}`}>
+                                                        <p className="ssd-title">{song.title}</p>
+                                                    </Link>
+                                                    
                                                 </div>
 
                                                 <div className="ssd-tag">
@@ -81,7 +88,7 @@ class SongIndex extends React.Component {
                                                 </div>
                                             </div>
 
-
+                                            <div className="sample-waveform" />
                                         </div>
                                     </li>
                                 )

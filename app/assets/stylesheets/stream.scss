@@ -41,13 +41,10 @@
     .stream-song-details {
         width: 644px;
         height: 168px;
-        outline: 1px solid red;
 
         .ssd-header {
             width: 644px;
             height: 50px;
-            outline: 1px solid red;
-            margin-bottom: 6px;
             padding-top: 7px;
             display: flex;
             flex-direction: row;
@@ -82,7 +79,7 @@
                 display: flex;
                 flex-direction: column;
                 height: 36px;
-                width: 503px;
+                width: 490px;
                 margin: 0 0 auto 5px;
 
                 .ssd-title {
@@ -115,10 +112,36 @@
             }
 
             .ssd-tag {
-                width: 77px;
+                width: 112px;
                 height: 20px;
                 margin-left: 5px;
+                display: flex;
+                flex-direction: row-reverse;
+
+                .ssd-genre {
+                    margin: auto 0;
+                    font-family: 'interstateextralight';
+                    font-size: 12px;
+                    float: right;
+                    background-color: #999;
+                    color: #fff;
+                    border-radius: 20px;
+                    line-height: 1.5;
+                    padding: 0 6px;
+
+                    &:hover {
+                        background-color: #666;
+                        cursor: pointer;
+                    }
+                }
             }
+        }
+
+        .sample-waveform {
+            width: 646px;
+            height: 66px;
+            background-image: url('samplewaveform.png');
+            background-size: cover;
         }
     }
 }
