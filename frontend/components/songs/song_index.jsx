@@ -14,34 +14,39 @@ class SongIndex extends React.Component {
         this.props.fetchSongs().then( result => { this.setState({ songs: result.songs }) });
     }
 
-    switchIcon() {
-        let button = document.getElementById("button");
-
-        if (button.classList.contains("fa-play")) {
+    switchIcon(button, paused) {
+        if (paused) {
             button.classList.remove("fa-play");
             button.classList.add("fa-pause")
-        } else if (button.classList.contains("fa-pause")) {
+        } else {
             button.classList.remove("fa-pause");
             button.classList.add("fa-play");
         }
     }
 
     handleClick(id) {
-        console.log(this.state);
-        
         return((e) => {
             e.preventDefault();
-            this.switchIcon();
             this.props.changeSong(id);
             this.props.fetchSong(id);
-
+            let button = e.currentTarget.children[0];
             const audio = document.querySelector(".html__player");
+
+            const playButtons = document.querySelectorAll('.stream-play-button > i')
+
+            playButtons.forEach(button => {
+                if (button.classList.contains('fa-pause')) {
+                    this.switchIcon(button, false);
+                }
+            })
 
             setTimeout(() => {
                 if (this.props.paused === true) {
+                    this.switchIcon(button, true);
                     audio.play();
                     this.props.togglePlayState();
                 } else {
+                    this.switchIcon(button, false);
                     audio.pause();
                     this.props.togglePlayState();
                 }

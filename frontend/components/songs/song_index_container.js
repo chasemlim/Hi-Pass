@@ -7,6 +7,7 @@ import { changeSong, togglePlayState } from '../../actions/player_actions';
 const mapStateToProps = (state) => {
 
     return ({
+        paused: state.ui.player.paused,
         currentUserId: state.session.currentUser,
         songs: state.entities.songs,
         users: state.entities.users

@@ -59,8 +59,6 @@ class Player extends React.Component {
             audio.pause();
             this.props.togglePlayState();
         }
-        console.log(this.props.song);
-        
     }
 
     seek(e) {
