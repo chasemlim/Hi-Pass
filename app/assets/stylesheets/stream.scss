@@ -140,7 +140,7 @@
         .sample-waveform {
             width: 646px;
             height: 66px;
-            background-image: url('samplewaveform.png');
+            background-image: image_url('samplewaveform.png');
             background-size: cover;
         }
 
@@ -251,7 +251,7 @@
                         width: 16px;
                         height: 12px;
                         background-size: 16px 16px;
-                        background-image: url('playbutton.svg');
+                        background-image: image_url('playbutton.svg');
                         background-repeat: no-repeat;
                         background-position: center center;
                         margin-right: 2px;
