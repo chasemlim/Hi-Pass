@@ -22,7 +22,7 @@ class WelcomeNavBar extends React.Component {
                         <h2>Upload your first track and begin your journey. Hi-Pass gives you space to create,
                             find your fans, and connect with other artists.</h2>
                     </div>
-                    <button className="start-uploading-button">Start uploading today</button>
+                    <button className="start-uploading-button" onClick={() => dispatch(openModal('login'))}>Start uploading today</button>
                 </div>
             </div>
         )

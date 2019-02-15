@@ -29,7 +29,7 @@ class WelcomePage extends React.Component {
                         </div>
                         <div className="search-upload">
                             <h2 className="welcome-or">or</h2>
-                            <button className="welcome-upload-own-button">Upload your own</button>
+                            <button className="welcome-upload-own-button" onClick={() => dispatch(openModal('login'))}>Upload your own</button>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@ class WelcomePage extends React.Component {
                     </div>
 
                     <div className="explore-trending">
-                        <button className="explore-trending-button">Explore trending playlists</button>
+                        <button className="explore-trending-button" onClick={() => dispatch(openModal('login'))}>Explore trending playlists</button>
                     </div>
 
                     <div className="never-stop-listening-div">
@@ -59,7 +59,7 @@ class WelcomePage extends React.Component {
                             <div className="creators-text">
                                 <p className="creators-header">Calling all creators</p>
                                 <p className="creators-description">Get on Hi-Pass to connect with fans, share your sounds, and grow your audience. What are you waiting for?</p>
-                                <button className="creators-button">Find out more</button>
+                                <a href="https://www.linkedin.com/in/chaselim/" target="_blank"><button className="creators-button">Find out more</button></a>
                             </div>
                         </div>
                     </div>
