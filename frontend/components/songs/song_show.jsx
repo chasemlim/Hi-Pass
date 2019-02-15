@@ -1,6 +1,5 @@
 import React from 'react';
 import MainHeaderContainer from '../main_header/main_header_container';
-import Player from '../player/player_container';
 
 class SongShow extends React.Component {
 
@@ -13,29 +12,19 @@ class SongShow extends React.Component {
         this.props.fetchSong(this.props.match.params.songId);
     }
 
-    handleClick(e) {
-        e.preventDefault();
-        this.switchIcon();
-        this.props.changeSong(this.props.song.id);
-
-        const audio = document.querySelector(".html__player");
-
-        setTimeout(() =>
-        {if (this.props.paused === true) {
-            audio.play();
+    handleClick() {
+        if (this.props.song.id === this.props.currentSongId) {
             this.props.togglePlayState();
         } else {
-            audio.pause();
-            this.props.togglePlayState();
-        }}, 500
-        )
+            this.props.changeSong(this.props.song.id);
+        }
     }
 
     render() {
         if (!this.props.song) return null; 
         if (!this.props.songUploader) return null; 
 
-        const playIcon = !this.props.paused ? 'fa-pause' : 'fa-play';
+        const playIcon = (this.props.song.id === this.props.currentSongId) && !this.props.paused ? 'fa-pause' : 'fa-play';
 
         return (
             <div className="content">
@@ -66,15 +55,15 @@ class SongShow extends React.Component {
                             <div className="comment">
                                 <div className="commenter-pic"></div>
                                 <form action="">
-                                    <input className="comment-form" type="text" placeholder="Write a comment" />
+                                    <input className="comment-form un" type="text" placeholder="Write a comment" />
                                 </form> 
                             </div>
 
                             <div className="buttons">
-                                <button className="show-buttons like-b">Like</button>
-                                <button className="show-buttons repost-b">Repost</button>
-                                <button className="show-buttons share-b">Share</button>
-                                <button className="show-buttons more-b">More</button>
+                                <button className="show-buttons like-b un">Like</button>
+                                <button className="show-buttons repost-b un">Repost</button>
+                                <button className="show-buttons share-b un">Share</button>
+                                <button className="show-buttons more-b un">More</button>
                             </div>
                         </div>
                     </div>
@@ -87,7 +76,7 @@ class SongShow extends React.Component {
                                 <p className="show-follower-count">17</p>
                                 <p className="show-tracks-count">6</p>
                             </div>
-                            <button className="show-follow-button">Follow</button>
+                            <button className="show-follow-button un">Follow</button>
                         </div>
 
                         <div className="description-div">

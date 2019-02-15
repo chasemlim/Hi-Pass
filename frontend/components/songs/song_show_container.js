@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.entities.users[state.session.currentUserId],
         song: state.entities.songs[ownProps.match.params.songId],
         paused: state.ui.player.paused,
-        songUploader: songUploader
+        songUploader: songUploader,
+        currentSongId: state.ui.player.currentSongId
     })
 }
 

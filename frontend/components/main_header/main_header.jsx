@@ -19,41 +19,41 @@ class MainHeader extends React.Component {
 
                 <div className="header-content">
                 
-                <a href="/#/stream">
+                <Link to="/stream">
                     <div className="header-orange-lo">              
                         <div className="header-sc-logo-lo"></div>
                         <p className="header-sc-text">HI-PASS</p>
                     </div>
-                </a>
+                </Link>
 
                 <div className="header-nav-div">
                     <ul>
                         <li>
-                            <a href="/#/">
+                            <Link to="/">
                                 <div>
                                     <p>Home</p>
                                 </div>
-                            </a> 
+                            </Link> 
                         </li>
                         <li>
-                            <a href="/#/stream">
+                            <Link to="/stream">
                                 <div>
                                     <p>Stream</p>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <div>
+                            <div className="un">
                                 <p>Collection</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div className="header-search-div">
+                <div className="header-search-div un">
                     <form action="">
-                        <input className="header-search-bar" type="search" placeholder="Search for artists, bands, tracks, podcasts" />
-                        <i className="fas fa-search header-s-icon"></i>
+                        <input className="header-search-bar un" type="search" placeholder="Search for artists, bands, tracks, podcasts" />
+                        <i className="fas fa-search header-s-icon un"></i>
                     </form>
                 </div>
 
@@ -62,14 +62,14 @@ class MainHeader extends React.Component {
                     <button className="header-create-account" onClick={() => dispatch(openModal('signup'))}>Create account</button>
                 </div>
 
-                <div className="pro-and-upload-so">
-                    <div className="pro-upload-div-so">
-                        <p className="header-pro-upload-text-so">Upload</p>
+                <div className="pro-and-upload-so un">
+                    <div className="pro-upload-div-so un">
+                        <p className="header-pro-upload-text-so un">Upload</p>
                     </div>
                 </div>
 
-                <div id="dropdown-div" className="options-dropdown" onClick={this.dropdown}>
-                    <i className="fas fa-ellipsis-h options-drop-button-so"></i>
+                <div id="dropdown-div" className="options-dropdown un" onClick={this.dropdown}>
+                    <i className="fas fa-ellipsis-h options-drop-button-so un"></i>
                     {/* <div id="dropdown" className="options-dropdown-content">
                         <a href="https://www.linkedin.com/in/chase-lim-64aba5127/">LinkedIn</a>
                     </div> */}
@@ -124,40 +124,40 @@ class MainHeader extends React.Component {
         return (
             <div className="main-header">
                 <div className="header-content">
-                    <a href="/#/stream">
+                    <Link to="/stream">
                         <div className="header-orange">
                             <div className="header-sc-logo"></div>
                         </div>
-                    </a>
+                    </Link>
 
                     <div className="header-nav-div">
                         <ul>
                             <li>
-                                <a href="/#/">
+                                <Link to="/">
                                     <div>
                                         <p>Home</p>
                                     </div>
-                                </a> 
+                                </Link> 
                             </li>
                             <li>
-                                <a href="/#/stream">
+                                <Link to="/stream">
                                     <div>
                                         <p>Stream</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <div>
+                                <div className="un">
                                     <p>Collection</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="header-search-div">
+                    <div className="header-search-div un">
                         <form action="">
-                            <input className="header-search-bar" type="search" placeholder="Search for artists, bands, tracks, podcasts" />
-                            <i className="fas fa-search header-s-icon"></i>
+                            <input className="header-search-bar un" type="search" placeholder="Search for artists, bands, tracks, podcasts" />
+                            <i className="fas fa-search header-s-icon un"></i>
                         </form>
                     </div>
 
@@ -166,7 +166,7 @@ class MainHeader extends React.Component {
                             <p className="header-pro-upload-text">Try Pro</p>
                         </div>
 
-                        <div className="pro-upload-div">
+                        <div className="pro-upload-div un">
                             <p className="header-pro-upload-text">Upload</p>
                         </div>
                     </div>
@@ -180,17 +180,17 @@ class MainHeader extends React.Component {
                         <div id="user-dropdown" className="user-dropdown-content">
                             <div className="profile-tab">
                                 <i className="fas fa-user-alt profile-button"></i>
-                                <p className="profile-text">Profile</p>
+                                <p className="profile-text un">Profile</p>
                             </div>
 
                         </div>
                     </div>
 
-                    <div className="notif-icon">
-                        <i className="fas fa-bell notif-icon-button"></i>
+                    <div className="notif-icon un">
+                        <i className="fas fa-bell notif-icon-button un"></i>
                     </div>
-                    <div className="mail-icon">
-                        <i className="fas fa-envelope mail-icon-button"></i>
+                    <div className="mail-icon un">
+                        <i className="fas fa-envelope mail-icon-button un"></i>
                     </div>
                     <div id="dropdown-div" className="options-dropdown" onClick={this.dropdown}>
                         <i className="fas fa-ellipsis-h options-drop-button"></i>
