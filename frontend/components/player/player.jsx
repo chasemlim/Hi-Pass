@@ -31,6 +31,10 @@ class Player extends React.Component {
                 this.audio.play();
             }
         }
+        
+        if (!this.props.song) {
+            return;
+        }
 
         if ((!prevProps.song && this.props.song) || (prevProps.song.audioURL !== this.props.song.audioURL)) {
             this.audio.play();
