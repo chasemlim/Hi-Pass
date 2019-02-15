@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
         paused: state.ui.player.paused,
         currentUserId: state.session.currentUser,
         songs: state.entities.songs,
-        users: state.entities.users
+        users: state.entities.users,
+        currentSongId: state.ui.player.currentSongId
     })
 }
 

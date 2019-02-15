@@ -1,6 +1,7 @@
 import { 
     SONG_PLAY_STATE,
-    RECEIVE_CURRENT_SONG
+    RECEIVE_CURRENT_SONG,
+    SET_PLAY_STATE
  } from '../actions/player_actions';
 
 let initialState = { paused: true, currentSongId: null }
@@ -15,6 +16,9 @@ let initialState = { paused: true, currentSongId: null }
             return newState;
         case RECEIVE_CURRENT_SONG:
             newState = Object.assign({}, state, { currentSongId: action.songId })
+            return newState;
+        case SET_PLAY_STATE:
+            newState = Object.assign({}, state, { paused: !action.playing })
             return newState;
         default:
             return state;

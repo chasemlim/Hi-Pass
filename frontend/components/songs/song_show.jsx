@@ -6,26 +6,11 @@ class SongShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.switchIcon = this.switchIcon.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
-        const { song } = this.props;
-
         this.props.fetchSong(this.props.match.params.songId);
-    }
-
-    switchIcon() {
-        let button = document.getElementById("button");
-
-        if (button.classList.contains("fa-play")) {
-            button.classList.remove("fa-play");
-            button.classList.add("fa-pause")
-        } else if (button.classList.contains("fa-pause")) {
-            button.classList.remove("fa-pause");
-            button.classList.add("fa-play");
-        }
     }
 
     handleClick(e) {
@@ -50,6 +35,8 @@ class SongShow extends React.Component {
         if (!this.props.song) return null; 
         if (!this.props.songUploader) return null; 
 
+        const playIcon = !this.props.paused ? 'fa-pause' : 'fa-play';
+
         return (
             <div className="content">
                 <MainHeaderContainer />
@@ -57,7 +44,7 @@ class SongShow extends React.Component {
                     <div className="left-listen">
                         <div className="song-info">
                             <div className="play-button" onClick={this.handleClick}>
-                                <i id="button" className="fas fa-play button" ></i>
+                                <i id="button" className={`fas ${playIcon} button`} ></i>
                             </div>
                             <div className="artist-and-song">
                                 <p className="artist-name">{this.props.song.artist}</p>

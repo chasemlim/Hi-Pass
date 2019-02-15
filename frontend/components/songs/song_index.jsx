@@ -25,33 +25,13 @@ class SongIndex extends React.Component {
     }
 
     handleClick(id) {
-        return((e) => {
-            e.preventDefault();
-            this.props.changeSong(id);
-            this.props.fetchSong(id);
-            let button = e.currentTarget.children[0];
-            const audio = document.querySelector(".html__player");
-
-            const playButtons = document.querySelectorAll('.stream-play-button > i')
-
-            playButtons.forEach(button => {
-                if (button.classList.contains('fa-pause')) {
-                    this.switchIcon(button, false);
-                }
-            })
-
-            setTimeout(() => {
-                if (this.props.paused === true) {
-                    this.switchIcon(button, true);
-                    audio.play();
-                    this.props.togglePlayState();
-                } else {
-                    this.switchIcon(button, false);
-                    audio.pause();
-                    this.props.togglePlayState();
-                }
-            }, 500
-            )
+        return(() => {
+            if (id === this.props.currentSongId) {
+                this.props.togglePlayState();
+            } else {
+                this.props.fetchSong(id)
+                    .then(() => this.props.changeSong(id));
+            }
         })
     }
 
@@ -64,6 +44,9 @@ class SongIndex extends React.Component {
                     <ul className="stream-ul">
                         {
                             Object.values(this.state.songs).map( song => {
+                    
+                                const playIcon = !this.props.paused && (song.id === this.props.currentSongId) ? 'fa-pause' : 'fa-play';
+
                                 return (
                                     <li className="stream-song" key={`${song.id}`}>
                                         <Link className="stream-aa-link" to={`/songs/${song.id}`}>
@@ -75,7 +58,7 @@ class SongIndex extends React.Component {
                                         <div className="stream-song-details">
                                             <div className="ssd-header">
                                                 <div className="stream-play-button" onClick={this.handleClick(song.id)}>
-                                                    <i id="button" className="fas fa-play stream-button"></i>
+                                                    <i id="button" className={`fas ${playIcon} stream-button`}></i>
                                                 </div>
 
                                                 <div className="ssd-text">

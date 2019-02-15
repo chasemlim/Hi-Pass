@@ -9,12 +9,9 @@ class Player extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            song: this.props.song,
-            paused: this.props.paused,
             volume: 0.75,
             mute: false
         }
-        this.togglePlayPause = this.togglePlayPause.bind(this);
     }
 
     componentDidMount() {
@@ -22,7 +19,23 @@ class Player extends React.Component {
         const volumeFilled = document.querySelector(".volume__filled");
         audio.addEventListener("timeupdate", this.handleProgress.bind(this));
         audio.addEventListener("timeupdate", this.updateDuration.bind(this));
+        window.setPlayState = this.props.setPlayState.bind(this);
         // volumeFilled.addEventListener("volumechange", this.handleVolumeProgress.bind(this));
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.paused !== this.props.paused) {
+            if (this.props.paused) {
+                this.audio.pause();
+            } else {
+                this.audio.play();
+            }
+        }
+
+        if ((!prevProps.song && this.props.song) || (prevProps.song.audioURL !== this.props.song.audioURL)) {
+            this.audio.play();
+            this.props.setPlayState(true);
+        }
     }
 
     handleProgress() {
@@ -47,18 +60,6 @@ class Player extends React.Component {
         momentDurationFormatSetup(moment);
         timer.innerHTML = formattedTime.format("mm:ss", { trim: false });
         totalTime.innerHTML = formattedDuration.format("mm:ss", { trim: false });
-    }
-
-    togglePlayPause() {
-        const audio = document.querySelector(".html__player");
-
-        if (this.props.paused === true) {
-            audio.play();
-            this.props.togglePlayState();
-        } else {
-            audio.pause();
-            this.props.togglePlayState();
-        }
     }
 
     seek(e) {
@@ -197,20 +198,18 @@ class Player extends React.Component {
 
         const { song } = this.props;
 
-        let title = null;
-
-        let audioSource = this.props.song ? song.audioURL : undefined;
+        let audioSource = song ? song.audioURL : undefined;
 
         return (
           <div className="player">
             <div className="player-div">
-              <audio className="html__player" src={audioSource} />
+              <audio className="html__player" ref={(audioRef) => this.audio = audioRef} src={audioSource} />
 
               <div className="player__controls">
                 <div className="play__button">
                   <button
                     className="play__pause"
-                    onClick={this.togglePlayPause}
+                    onClick={this.props.togglePlayState}
                   >
                     {playOrPause}
                   </button>

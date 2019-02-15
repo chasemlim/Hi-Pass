@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { changeSong, togglePlayState } from '../../actions/player_actions';
+import { changeSong, togglePlayState, setPlayState } from '../../actions/player_actions';
 import Player from './player';
 
 const mapStateToProps = state => {
@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => {
 
     return ({
         changeSong: (id) => dispatch(changeSong(id)),
-        togglePlayState: () => dispatch(togglePlayState())
+        togglePlayState: () => dispatch(togglePlayState()),
+        setPlayState: (playing) => dispatch(setPlayState(playing))
     })
 }
 
