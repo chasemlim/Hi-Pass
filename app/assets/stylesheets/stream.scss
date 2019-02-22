@@ -261,3 +261,32 @@
         }
     }
 }
+
+.stream-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.self-links {
+    height: 700px;
+    width: 270px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    a:hover {
+        i {
+            opacity: 1;
+        }
+    }
+
+    i {
+        font-size: 150px;
+        color: #323332;
+        opacity: 0.1;
+        transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+    }
+}
